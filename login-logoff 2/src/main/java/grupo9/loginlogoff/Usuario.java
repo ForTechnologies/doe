@@ -7,17 +7,15 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
+    private Boolean is_active;
 
     public Usuario(String nome, String email, String senha) {
-        this.id = UUID.randomUUID();
         this.nome = nome;
         this.email = email;
         this.senha = senha;
+        this.is_active = false;
     }
 
-    public UUID getId() {
-        return id;
-    }
 
     public String getNome() {
         return nome;
@@ -30,5 +28,15 @@ public class Usuario {
     public String getSenha() {
         return senha;
     }
+
+
+    public void setIs_active(Boolean is_active) {
+        this.is_active = is_active;
+    }
+
+    public Boolean getIs_active() {
+        return is_active;
+    }
+
 
 }
