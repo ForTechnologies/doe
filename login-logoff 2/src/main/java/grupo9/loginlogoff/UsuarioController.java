@@ -21,7 +21,7 @@ public class UsuarioController {
         return usuarios;
     }
 
-    @PutMapping ("/login")
+    @PutMapping("/login")
     public String putLogin(@RequestBody Usuario authUser) {
 
         String resposta = "não foi possível logar";
@@ -41,16 +41,23 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/logout")
-    public String putLogout(@RequestBody Usuario authUser){
-        String resposta = "Não foi possível deslogar";
+    public String putLogout(@RequestBody Usuario authUser) {
+        System.out.println(usuariosLogado.toString());
 
+        String resposta = "Não foi possível encontrar";
 
-        if (usuariosLogado.contains(authUser)){
-            usuariosLogado.remove(authUser);
-            resposta = "deslogado com suceso";
+        for (Usuario usuario : usuariosLogado) {
+            if (usuario.getEmail().equalsIgnoreCase(authUser.getEmail())) {
+                System.out.println("entrei aqui");
+                usuariosLogado.removeIf(x -> x.getEmail().equalsIgnoreCase(authUser.getEmail()) && x.getSenha().equals(authUser.getSenha()));
+                System.out.println(usuariosLogado.toString());
+                resposta = "deslogado com sucesso";
+            } else {
+                resposta = "Bad request";
+            }
         }
 
-        return resposta + usuariosLogado.toString();
+        return resposta;
     }
 }
 
