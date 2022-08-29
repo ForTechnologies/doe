@@ -1,5 +1,6 @@
 package grupo9.loginlogoff;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Usuario {
@@ -7,13 +8,13 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private Boolean is_active;
+    private Boolean isActive;
 
     public Usuario(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.is_active = false;
+        this.isActive = false;
     }
 
 
@@ -30,13 +31,25 @@ public class Usuario {
     }
 
 
-    public void setIs_active(Boolean is_active) {
-        this.is_active = is_active;
+    public void setIsActive(Boolean is_active) {
+        this.isActive = is_active;
     }
 
-    public Boolean getIs_active() {
-        return is_active;
+    public Boolean getIsActive() {
+        return isActive;
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return email.equalsIgnoreCase(usuario.email) && senha.equals(usuario.senha);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, senha);
+    }
 }
