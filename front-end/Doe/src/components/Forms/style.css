@@ -1,0 +1,25 @@
+.FormControl {
+display: flex;
+flex-direction: column;
+margin-bottom: 60em;
+background-color: rgb(38, 47, 54);
+}
+
+
+.FormControl label {
+
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.FormControl input {
+  height: 50px;
+  width: 200px;
+  padding: .7em;
+  border-radius: 20px;
+  border: none;
+}
+
+.FormControl input::placeholder {
+  color: red;
+}
