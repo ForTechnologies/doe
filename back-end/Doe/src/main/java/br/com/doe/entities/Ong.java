@@ -16,7 +16,7 @@ public class Ong extends BaseEntity{
     private String cnpj;
 
     @Size(max=12)
-    private Integer contato;
+    private String contato;
 
     @Email
     @Size(max=50)
@@ -25,10 +25,10 @@ public class Ong extends BaseEntity{
     @Past
     private LocalDate dataCriacao;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-    @OneToOne(mappedBy = "ong",cascade = CascadeType.PERSIST)
+    @OneToOne(mappedBy = "ong", cascade = CascadeType.PERSIST)
     private Permissao permissao;
 }

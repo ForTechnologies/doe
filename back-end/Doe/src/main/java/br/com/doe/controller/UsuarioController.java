@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -16,11 +17,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
-
-    //@Autowired
     private UsuarioService service;
-
-
     @PostMapping
     public ResponseEntity<String> criar(@RequestBody @Valid UsuarioDto novoUsuario) {
         service.criar(novoUsuario);
@@ -28,12 +25,12 @@ public class UsuarioController {
     }
 
     @GetMapping("/{email}")
-    public ResponseEntity<?> buscar(@PathVariable String email) {
+    public ResponseEntity<UsuarioDto> buscar(@PathVariable String email) {
         try {
             UsuarioDto dto = service.buscar(email);
             return ResponseEntity.status(200).body(dto);
         } catch (ChangeSetPersister.NotFoundException ex) {
-            throw new NotFoundException("Usuário não encontrado");
+            throw new NotFoundException("Usuário " + email + " não encontrado");
         }
     }
 

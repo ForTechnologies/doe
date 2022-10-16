@@ -33,6 +33,4 @@ public class EnderecoDto {
     @Size(max=2)
     private String uf;
 
-    private Ong ong;
-
 }

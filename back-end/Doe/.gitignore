@@ -1,7 +1,7 @@
 # Default ignored files
 .DS_Store
 /shelf/
-/workspace.xml
+/.idea/workspace.xml
 
 
 ### IntelliJ IDEA ###

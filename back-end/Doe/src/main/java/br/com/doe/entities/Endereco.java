@@ -14,31 +14,24 @@ import javax.validation.constraints.Size;
 @Getter @Setter
 public class Endereco extends BaseEntity{
     @NotBlank
-    @Size(max = 50)
     private String logradouro;
 
     @NotBlank
-    @Size(max= 20)
     private String bairro;
 
     @NotNull
-    @Size(max= 5)
     private Integer numero;
 
     @NotBlank
-    @Size(max=8)
     private String cep;
 
     @NotBlank
-    @Size(max= 20)
     private String localidade;
 
     @NotBlank
-    @Size(max=2)
     private String uf;
 
-    @OneToOne
-    @JoinColumn(name = "ong_id")
+    @OneToOne(mappedBy = "endereco")
     private Ong ong;
 
 }

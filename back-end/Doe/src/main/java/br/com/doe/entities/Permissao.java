@@ -8,12 +8,12 @@ import javax.persistence.*;
 @Getter @Setter
 public class Permissao extends BaseEntity {
    @ManyToOne
-   @JoinColumn(name = "usuario_id")
+   @JoinColumn(name = "usuario_id", referencedColumnName = "id")
    private Usuario usuario;
 
    @Enumerated(EnumType.ORDINAL)
    private TipoPermissao tipo;
-   @OneToOne
+   @OneToOne(cascade = CascadeType.PERSIST)
    @JoinColumn(name = "ong_id",referencedColumnName = "id")
    private Ong ong;
 

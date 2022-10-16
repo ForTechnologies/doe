@@ -1,18 +1,21 @@
 package br.com.doe.controller.dtos;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 @Getter @Setter
-public class UsuarioDto {
-
+public class UsuarioDto implements UserDetails {
     private Long id;
 
     @Email
@@ -20,12 +23,17 @@ public class UsuarioDto {
     private String email;
 
     @NotBlank(message = "Senha inválida")
-    @Size(max=30)
     private String senha;
 
     @NotBlank(message = "Nome inválido")
     @Size(max=100)
     private String nome;
+    private List<PermissaoDto> permissoesOng = new ArrayList<>();
+
+    public UsuarioDto() {
+        this.id = id;
+        this.email = email;
+    }
 
     @JsonProperty
     public Long getId() {
@@ -35,5 +43,45 @@ public class UsuarioDto {
     @JsonIgnore
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @JsonIgnore
+    public String getSenha() {
+        return senha;
+    }
+
+    @JsonIgnore @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.permissoesOng;
+    }
+
+    @JsonIgnore @Override
+    public String getPassword() {
+        return this.senha;
+    }
+
+    @JsonIgnore @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @JsonIgnore @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @JsonIgnore @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @JsonIgnore @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @JsonIgnore @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

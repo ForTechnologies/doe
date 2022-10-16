@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/doe.iml" filepath="$PROJECT_DIR$/.idea/doe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/login-logoff 2/login-logoff.iml" filepath="$PROJECT_DIR$/login-logoff 2/login-logoff.iml" />
-    </modules>
-  </component>
-</project>

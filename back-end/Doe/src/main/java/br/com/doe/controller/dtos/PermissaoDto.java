@@ -1,19 +1,22 @@
 package br.com.doe.controller.dtos;
 
-import br.com.doe.entities.Ong;
 import br.com.doe.entities.TipoPermissao;
-import br.com.doe.entities.Usuario;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
 @Getter @Setter
-public class PermissaoDto {
-    private Usuario usuario;
+public class PermissaoDto implements GrantedAuthority {
 
     @Enumerated(EnumType.ORDINAL)
     private TipoPermissao tipo;
 
-    private Ong ong;
+    private OngDto ong;
+    @JsonIgnore @Override
+    public String getAuthority() {
+        return this.tipo.toString() ;
+    }
 }
