@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../../components/Forms/input.js';
 import BtnPadrao from '../../components/botoes/style'
-import { FormControl, InputPadrao, DivIconSenha } from '../../components/Forms/styleForms'
+import { FormControl, InputPadrao} from '../../components/Forms/styleForms'
 import { ContainerPadraoForm, ContainerPadraoFoto } from '../../components/Containers/style';
 import fotoContainerLogin from '../../assets/imgs-login/containerfotologin.png';
 

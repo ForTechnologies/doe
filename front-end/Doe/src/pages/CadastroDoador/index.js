@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState }  from 'react';
 import { Link } from 'react-router-dom';
 import rotaVoltar from '../../assets/Voltar.png'
 import { ContainerPadraoForm, ContainerPadraoFoto } from '../../components/Containers/style.js';
@@ -8,9 +8,7 @@ import { FormGrid, InputPadrao, InputMenorPadrao, TextoEntre } from '../../compo
 import { validEmail, validPassword } from "../../utils/regex";
 import estados from '../../utils/estados.js';
 import Alert from '@mui/material/Alert';
-import CadastroDoadorService from "../../services/CadastroDoadorService";
-
-
+// import CadastroDoadorService from "../../services/CadastroDoadorService";
 
 
 
@@ -119,8 +117,6 @@ const CadastroDoador = () => {
   //             break;
   //     }
   // }
-
-
 
 
 
