@@ -1,20 +1,40 @@
-import React from "react";
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../../components/Forms/input.js';
 import { ContainerPadraoForm, ContainerPadraoFoto } from '../../components/Containers/style.js';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import rotaVoltar from '../../assets/Voltar.png'
-//import Input from '../../components/Forms/input.js';
-import {BtnPadraoFuncao} from '../../components/botoes/index.js'
+import BtnPadrao from '../../components/botoes/style'
 import { FormGrid, InputPadrao, InputMenorPadrao, TextoEntre } from '../../components/Forms/styleForms'
+import estados from '../../utils/estados.js';
+import { cnpjMask } from '../../utils/cnpjMask'
+
+
+
 /* <Link to="/">retornar a página inicial</Link> */
 
 
 
-
-
-
 const CadastroOng = () => {
+
+
+    const [telefoneInput, setTelefoneInput] = useState("");
+    const [cnpjInput, setCnpjInput] = useState("");
+    const [estadoInput, setEstadoInput] = useState("");
+
+
+    // constante e método responáveis pela máscara de formatação do cnpj
+    // https://medium.com/reactbrasil/m%C3%A1scara-de-cnpj-com-react-regex-bafb58d2285e
+    const [values, setValues] = useState({ cnpj: '' })
+    const inputChange = (e) => {
+        const { name, value } = e.target
+        setValues({
+            ...values,
+            [name]: value
+        })
+    }
+
+
 
     return (
 
@@ -41,73 +61,82 @@ const CadastroOng = () => {
                 <FormGrid>
                     <div className='gridOng input1'>
                         <InputPadrao>
-                            <Input 
-                            
-                            type="text"
+                            <label>Nome do dirigente *:</label>
+                            <input
+                                id="idNome"
+                                type="text"
                                 text="Nome do dirigente *"
                                 name="teste"
                                 placeholder="Digite o nome"
-                                required > </Input>
+                                required />
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input2'>
                         <InputPadrao>
-                            <Input
-                             type="text"
-                                text="Email de contato *"
+                            <label>Nome da ong *:</label>
+                            <input
+                                type="text"
+                                text="NomeOng"
                                 name="teste"
-                                placeholder="Digite o email principall"
-                                required> </Input>
+                                placeholder="Digite o nome da ong"
+
+                                required />
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input3'>
                         <InputPadrao>
-                            <Input 
-                             type="text"
-                                text="Nome da ong *"
+                            <label>Email principal *:</label>
+                            <input
+                                id="emailPrincipal"
+                                type="text"
+                                text=" *"
                                 name="teste"
-                                placeholder="Digite seu email"
-                                required> </Input>
+                                placeholder="Digite o email principal"
+                                required />
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input4'>
                         <InputPadrao>
-                            <Input
-                             type="text"
+                            <label>Endereço *:</label>
+                            <input
+                                type="text"
                                 text="Endereço *"
                                 name="teste"
                                 placeholder="Digite o endereço da ong"
-                                required> </Input>
+                                required />
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input5'>
                         <InputPadrao>
-                            <Input 
-                             type="text"
-                                text="Senha *"
-                                name="teste"
-                                placeholder="Defina uma senha forte"
-                                required > </Input>
+                            <label>CNPJ da ong *:</label>
+                            <input onInput={(evento) => { setCnpjInput(cnpjMask(evento.target.value)) }}
+                                type="text"
+                                name="cnpj"
+                                placeholder='XX.XXX.XXX/XXXX-XX'
+                                value={cnpjMask(values.cnpj)} //exibe a formatação correta
+                                onChange={inputChange}//formata o cnpj a cada numero digitado
+                                required />
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input6Ong'>
                         <InputMenorPadrao>
-                            <Input 
-                            type="text"
+                            <label>Numero *:</label>
+                            <input
+                                type="number"
                                 text="Numero *"
                                 name="teste"
                                 placeholder="Numero da rua"
-                                required> </Input>
+                                required />
                         </InputMenorPadrao>
 
                         <InputMenorPadrao>
                             <Input
-                            type="text"
+                                type="text"
                                 text="Bairro *"
                                 name="teste"
                                 placeholder="Bairro da ong"
@@ -117,32 +146,37 @@ const CadastroOng = () => {
 
                     <div className='gridOng input7'>
                         <InputPadrao>
-                            <Input 
-                            className="input1" 
-                            type="text"
+                            <label>Telefone da ong *:</label>
+
+                            <input onInput={(evento) => { setTelefoneInput(evento.target.value) }}
+                                className="input1"
+                                type="number"
                                 text="Email"
-                                name="CNPJ *"
-                                placeholder="xx.xxx.xxx/xxxx-xx"  
-                                required >
-                                    
-                                     </Input>
+                                name="telefone"
+                                placeholder="(11) 11111-1111"
+                                // value={telefoneMask(valuesTel.telefone)}
+                                // onChange={inputChangeTel}
+                                required />
 
                         </InputPadrao>
                     </div>
 
                     <div className='gridOng input8Ong'>
                         <InputMenorPadrao>
-                            <Input
-                             type="text"
-                                text="Estado *"
-                                name="teste"
-                                placeholder="Selecione sua UF"
-                                required> </Input>
+                            <label>Estado *:</label>
+                            <select onInput={(evento) => { setEstadoInput(evento.target.value) }}
+                                name='estado'
+                                placeholder='Selecione seu estado'
+                                className='small-select-input'>
+                                {estados.map((item) =>
+                                    <option key={item.index} value={item.value}>{item.label}</option>
+                                )}
+                            </select>
                         </InputMenorPadrao>
 
                         <InputMenorPadrao>
                             <Input
-                             type="text"
+                                type="text"
                                 text="Cidade *"
                                 name="teste"
                                 placeholder="Selecione sua cidade"
@@ -153,13 +187,12 @@ const CadastroOng = () => {
 
                     <div className='gridOng input9'>
                         <InputPadrao>
-                            <Input
-                            type="text"
-                                text="Telefone *"
-                                name="teste"
-                                placeholder="Digite o telefone principal"
-                                required>
-                            </Input>
+                            <label>Senha *:</label>
+                            <input
+                                type="password"
+                                name="senha"
+                                placeholder="Digite uma senha forte"
+                                required />
                         </InputPadrao>
                     </div>
 
@@ -174,15 +207,16 @@ const CadastroOng = () => {
                         </InputPadrao>
                     </div>
                     <div className='btnCadastroOng'>
-                        <BtnPadraoFuncao text='REGISTRAR CONTA'>
-                        </BtnPadraoFuncao>
+                        <BtnPadrao>
+                            REGISTRAR CONTA
+                        </BtnPadrao>
                     </div>
                 </FormGrid>
             </ContainerPadraoForm>
         </div>
 
     );
-    
-    }
+
+}
 
 export default CadastroOng;

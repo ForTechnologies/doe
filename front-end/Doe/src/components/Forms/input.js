@@ -4,15 +4,15 @@ import React from "react";
 
 
 
-function Input({type, text, name, placeholder, handleOnChange, value}) {
+function Input({text, placeholder, event}) {
 
 
     return (
 
         <>
-        <label htmlFor={name}>{text}:</label>
-          <input type={type} name={name} id={name} placeholder={placeholder}
-          onChange={handleOnChange} value={value}> 
+        <label>{text}:</label>
+          <input placeholder={placeholder}
+          > 
         </input>
         </>       
         

@@ -2,13 +2,13 @@ import { React } from 'react';
 import { BtnPadrao } from './style.js'
 
 
-export const BtnPadraoFuncao = ({text}) => {
+export const BtnPadraoFuncao = () => {
 
   return (
 
     <>
        <div>
-        <BtnPadrao>{text}</BtnPadrao>
+        <BtnPadrao></BtnPadrao>
        </div>
 
     </>

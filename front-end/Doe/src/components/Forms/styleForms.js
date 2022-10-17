@@ -92,9 +92,8 @@ label {
 }
 
 input {
-  
-margin-bottom: 20px;
-height: 50px;
+  margin-bottom: 20px;
+  height: 50px;
 width: 320px;
 padding: .7em;
 border-radius: 12px;
@@ -110,6 +109,15 @@ color: red;
 padding-left: 10px;
 color: #696F79;
 
+}
+
+
+p {
+  margin-left: 5px;
+  color: red;
+  font-size: 15px;
+  position: relative;
+  bottom: 20px;
 }
 
 
@@ -134,7 +142,7 @@ label {
 
 input {
 
-margin-bottom: 20px;
+margin-bottom: 0px;
 height: 50px;
 width: 150px;
 padding: .7em;
@@ -146,6 +154,22 @@ border: 1px solid #696F79;
 
 }
 
+ select {
+
+margin-bottom: 20px;
+margin-right: 25px;
+height: 50px;
+width: 150px;
+padding: .7em;
+border-radius: 12px;
+border: none;
+display: flex;
+background-color: transparent;
+border: 1px solid #696F79;
+
+}
+
+
 input::placeholder {
 color: red;
 padding-left: 10px;
@@ -153,20 +177,52 @@ color: #696F79;
 
 }
 
+select::placeholder {
+color: red;
+padding-left: 10px;
+color: #696F79;
+
+}
 
 
 `
 
 
-export const FormGrid = styled.div `
+export const FormGrid = styled.form `
 
 width: 93%;
-min-height: 60%;
+min-height: 70%;
 margin: 0px;
 display: grid;
 grid-template-columns: 1fr 1fr;
 position: relative;
 left: 20px;
+
+/* Cor de fundo do autocomplete */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+/* Cor do texto do autocomplete */
+input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: black !important;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 
 .gridDoador{
@@ -214,7 +270,7 @@ export const TextoEntre = styled.div `
 }
 
 .textEntreCadastroDoador   {
-  height: 200px;
+  height: 170px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -236,6 +292,28 @@ export const TextoEntre = styled.div `
 
 
 `
+
+
+export const DivIconSenha = styled.div `
+
+width: 50px;
+height: 50px;
+display: flex;
+position: relative;
+left: 260px;
+bottom: 70px;
+
+
+img {
+  height: 25px;
+  margin: 15px;
+  cursor: pointer;
+
+}
+
+
+`
+
 
 
 
