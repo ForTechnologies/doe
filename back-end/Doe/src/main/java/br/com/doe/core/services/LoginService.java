@@ -1,8 +1,8 @@
-package br.com.doe.service;
+package br.com.doe.core.services;
 
 
-import br.com.doe.controller.mappers.UsuarioMapper;
-import br.com.doe.repositories.UsuarioRepository;
+import br.com.doe.core.controllers.mappers.UsuarioMapper;
+import br.com.doe.core.repositories.UsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

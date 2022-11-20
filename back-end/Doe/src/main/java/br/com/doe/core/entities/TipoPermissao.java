@@ -1,4 +1,4 @@
-package br.com.doe.entities;
+package br.com.doe.core.entities;
 
 public enum TipoPermissao {
     ADMIN,

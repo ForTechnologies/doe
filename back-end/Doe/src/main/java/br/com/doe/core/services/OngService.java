@@ -1,15 +1,18 @@
-package br.com.doe.service;
+package br.com.doe.core.services;
 
-import br.com.doe.controller.dtos.OngDto;
-import br.com.doe.controller.dtos.UsuarioAutenticado;
-import br.com.doe.controller.mappers.OngMapper;
-import br.com.doe.entities.Ong;
-import br.com.doe.entities.Permissao;
-import br.com.doe.entities.TipoPermissao;
-import br.com.doe.repositories.OngRepository;
+
+
+import br.com.doe.core.controllers.mappers.OngMapper;
+import br.com.doe.core.dtos.OngDto;
+import br.com.doe.core.dtos.UsuarioAutenticado;
+import br.com.doe.core.entities.Ong;
+import br.com.doe.core.entities.Permissao;
+import br.com.doe.core.entities.TipoPermissao;
+import br.com.doe.core.repositories.OngRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

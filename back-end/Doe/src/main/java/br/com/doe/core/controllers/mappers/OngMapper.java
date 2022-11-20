@@ -1,7 +1,9 @@
-package br.com.doe.controller.mappers;
+package br.com.doe.core.controllers.mappers;
 
-import br.com.doe.controller.dtos.OngDto;
-import br.com.doe.entities.Ong;
+
+
+import br.com.doe.core.dtos.OngDto;
+import br.com.doe.core.entities.Ong;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

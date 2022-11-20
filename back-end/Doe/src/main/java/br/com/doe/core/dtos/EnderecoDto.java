@@ -1,4 +1,4 @@
-package br.com.doe.core.controllers.dtos;
+package br.com.doe.core.dtos;
 
 import com.sun.istack.NotNull;
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package br.com.doe.controller.exception;
+package br.com.doe.core.controllers.exception;
 
-import br.com.doe.service.exceptions.ConflictException;
+import br.com.doe.core.services.exceptions.ConflictException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;

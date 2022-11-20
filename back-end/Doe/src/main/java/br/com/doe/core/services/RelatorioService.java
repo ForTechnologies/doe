@@ -1,6 +1,6 @@
-package br.com.doe.service;
+package br.com.doe.core.services;
 
-import br.com.doe.entities.Usuario;
+import br.com.doe.core.entities.Usuario;
 import br.com.doe.utils.ListaObj;
 
 import java.io.FileNotFoundException;

@@ -1,9 +1,8 @@
-package br.com.doe.service;
+package br.com.doe.core.services;
 
-import br.com.doe.controller.dtos.PermissaoDto;
-import br.com.doe.controller.mappers.PermissaoUsuarioMapper;
-import br.com.doe.entities.Permissao;
-import br.com.doe.repositories.PermissaoUsuarioRepository;
+import br.com.doe.core.controllers.mappers.PermissaoUsuarioMapper;
+import br.com.doe.core.entities.Permissao;
+import br.com.doe.core.repositories.PermissaoUsuarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

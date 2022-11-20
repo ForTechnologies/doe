@@ -1,4 +1,4 @@
-package br.com.doe.core.controllers.dtos;
+package br.com.doe.core.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,12 +11,15 @@ import java.time.LocalDate;
 public class OngDto {
     @Size(max=14)
     private String cnpj;
+
     @Size(max=12)
     private String contato;
+
     @Email
     @Size(max=50)
     private String email;
     @Past
     private LocalDate dataCriacao;
+
     private EnderecoDto endereco;
 }

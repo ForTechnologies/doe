@@ -1,13 +1,12 @@
-package br.com.doe.controller;
+package br.com.doe.core.controllers;
 
-import br.com.doe.controller.dtos.UsuarioDto;
-import br.com.doe.controller.exception.NotFoundException;
-import br.com.doe.service.UsuarioService;
+import br.com.doe.core.controllers.exception.NotFoundException;
+import br.com.doe.core.dtos.UsuarioDto;
+import br.com.doe.core.services.UsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;

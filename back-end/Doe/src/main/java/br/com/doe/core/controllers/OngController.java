@@ -1,22 +1,14 @@
-package br.com.doe.controller;
+package br.com.doe.core.controllers;
 
-import br.com.doe.controller.dtos.OngDto;
-import br.com.doe.controller.dtos.PermissaoDto;
-import br.com.doe.controller.dtos.UsuarioAutenticado;
-import br.com.doe.controller.dtos.UsuarioDto;
-import br.com.doe.entities.Permissao;
-import br.com.doe.entities.TipoPermissao;
-import br.com.doe.entities.Usuario;
-import br.com.doe.service.OngService;
-import br.com.doe.service.PermissaoUsuarioService;
-import br.com.doe.service.UsuarioService;
+
+import br.com.doe.core.dtos.OngDto;
+import br.com.doe.core.services.OngService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,7 +29,7 @@ public class OngController {
         return ResponseEntity.status(HttpStatus.OK).body(service.buscarOngs());
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @Secured("ADMIN")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletar(@PathVariable int id){
         service.deletar(id);

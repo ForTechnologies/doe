@@ -1,4 +1,4 @@
-package br.com.doe.core.controllers.dtos;
+package br.com.doe.core.dtos;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,7 +19,6 @@ import java.util.List;
 @Getter @Setter
 public class UsuarioDto implements UserDetails {
     private Long id;
-
     @Email
     @Size(max=50)
     private String email;

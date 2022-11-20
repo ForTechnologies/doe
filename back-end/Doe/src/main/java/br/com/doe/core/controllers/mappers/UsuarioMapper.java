@@ -1,7 +1,8 @@
-package br.com.doe.controller.mappers;
+package br.com.doe.core.controllers.mappers;
 
-import br.com.doe.controller.dtos.UsuarioDto;
-import br.com.doe.entities.Usuario;
+
+import br.com.doe.core.dtos.UsuarioDto;
+import br.com.doe.core.entities.Usuario;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

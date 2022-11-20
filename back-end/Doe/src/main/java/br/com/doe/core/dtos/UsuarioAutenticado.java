@@ -1,4 +1,4 @@
-package br.com.doe.core.controllers.dtos;
+package br.com.doe.core.dtos;
 
 import lombok.Data;
 import org.springframework.security.core.Authentication;

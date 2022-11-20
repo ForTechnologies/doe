@@ -1,4 +1,4 @@
-package br.com.doe.controller.exception;
+package br.com.doe.core.controllers.exception;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;

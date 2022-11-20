@@ -1,6 +1,6 @@
-package br.com.doe.repositories;
+package br.com.doe.core.repositories;
 
-import br.com.doe.entities.Usuario;
+import br.com.doe.core.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

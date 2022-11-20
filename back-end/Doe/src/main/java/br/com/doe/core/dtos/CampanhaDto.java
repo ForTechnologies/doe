@@ -1,5 +1,6 @@
 package br.com.doe.core.dtos;
 
+import br.com.doe.core.entities.Ong;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,6 @@ public class CampanhaDto {
     private LocalDate dataInicio;
     private LocalDate dataFim;
     private String descricao;
-    private Integer nmrDoadores;
     private String urlImagem;
-    private Integer ong;
+    private Ong ong;
 }

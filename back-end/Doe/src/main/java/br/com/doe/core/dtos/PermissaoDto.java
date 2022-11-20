@@ -1,6 +1,7 @@
-package br.com.doe.core.controllers.dtos;
+package br.com.doe.core.dtos;
 
-import br.com.doe.entities.TipoPermissao;
+
+import br.com.doe.core.entities.TipoPermissao;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
