@@ -9,7 +9,7 @@ class CadastroDoadorService {
     }
 
     cadastrar(DoadorFormatado, EnderecoFormato) {
-        return api.post("/usuario/doador", DoadorFormatado)
+        return api.post("/usuarios", DoadorFormatado)
             .then((res) => { 
                 console.log("resposta obtida: ", res); 
                 this.state.res = res;

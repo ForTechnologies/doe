@@ -9,7 +9,7 @@ class CadastroOngService {
     }
 
     cadastrar(OngFormatado, EnderecoFormato) {
-        return api.post("/usuario/cadastroOng", OngFormatado)
+        return api.post("/ongs", OngFormatado)
             .then((res) => { 
                 console.log("resposta obtida: ", res); 
                 this.state.res = res;
