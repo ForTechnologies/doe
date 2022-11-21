@@ -39,4 +39,9 @@ public class UsuarioController {
         return ResponseEntity.status(200).build();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDto> put(@PathVariable int id, @RequestBody UsuarioDto usuario){
+        return ResponseEntity.status(200).body(service.atualizar(id, usuario));
+    }
+
 }

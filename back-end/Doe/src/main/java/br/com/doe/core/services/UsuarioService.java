@@ -9,6 +9,7 @@ import br.com.doe.core.services.exceptions.ConflictException;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +45,13 @@ public class UsuarioService {
 
     public void deletar(int id){
         repositorio.deleteById(id);
+    }
+
+    public UsuarioDto atualizar(long id, UsuarioDto usuario){
+            usuario.setId(id);
+            Usuario entity = mapper.dtoToEntity(usuario);
+            repositorio.save(entity);
+            return usuario;
     }
 
 

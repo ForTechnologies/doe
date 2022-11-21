@@ -2,6 +2,7 @@ package br.com.doe.core.controllers;
 
 import br.com.doe.core.dtos.UsuarioAutenticado;
 import br.com.doe.core.dtos.UsuarioDto;
+import br.com.doe.core.repositories.UsuarioRepository;
 import br.com.doe.core.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,17 @@ public class LoginController {
     @Autowired
     LoginService service;
 
+    @Autowired
+    UsuarioRepository repositorio;
+
     @PostMapping
     public ResponseEntity<?> login(@RequestBody UsuarioDto user){
         String token = ""+ user.getEmail() +":" + user.getSenha();
         token = Base64.getEncoder().encodeToString(token.getBytes());
 
-        //TODO verificar no banco se existe esse usuário com essa senha (findByEmailAndPasswaord(email, senha))
+        if(!repositorio.findByEmailAndSenha(user.getEmail(), user.getSenha())){
+            return ResponseEntity.status(400).build();
+        }
 
         Map<String, String> authenticateUserToken = new HashMap<>();
         authenticateUserToken.put("token", token);
