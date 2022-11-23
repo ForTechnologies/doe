@@ -148,7 +148,7 @@ const CadastroDoador = () => {
                 placeholder="Digite seu nome completo"
                 value={nome}
                 onChange={event => setNome(event.target.value)}
-                maxlength="50"
+                maxLength="50"
                 required="required"
               />
             </InputPadrao>
