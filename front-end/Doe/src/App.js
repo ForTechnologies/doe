@@ -17,10 +17,10 @@ function App() {
   
       <BrowserRouter>
       <Routes> 
-        <Route exact element = { <Teste /> }  path="/" />
-        {/* <Route exact element = { <Login /> }  path="/" />
+        {/* <Route exact element = { <Teste /> }  path="/" /> */}
+        <Route exact element = { <Login /> }  path="/" />
           <Route element = { <CadastroDoador /> }  path="/cadastroDoador" />
-          <Route element = { <CadastroOng /> }  path="/cadastroOng" /> */}
+          <Route element = { <CadastroOng /> }  path="/cadastroOng" />
           </Routes>
          
       </BrowserRouter> 
