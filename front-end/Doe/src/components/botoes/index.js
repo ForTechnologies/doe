@@ -1,5 +1,5 @@
 import { React } from 'react';
-import { BtnPadrao } from './style.js'
+import { BtnPadrao} from './style.js'
 
 
 export const BtnPadraoFuncao = () => {

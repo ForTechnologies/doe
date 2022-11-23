@@ -8,6 +8,7 @@ import { FormGrid, InputPadrao, InputMenorPadrao, TextoEntre } from '../../compo
 import { validEmail, validPassword } from "../../utils/regex";
 import estados from '../../utils/estados.js';
 import Alert from '@mui/material/Alert';
+import CadastroDoadorServico from '../../services/CadastroDoadorService';
 // import CadastroDoadorService from "../../services/CadastroDoadorService";
 
 
@@ -28,7 +29,7 @@ const CadastroDoador = () => {
   const [cidadeInput, setCidadeInput] = useState("");
   const [cepInput, setCepInput] = useState("");
   const [enderecoInput, setNumeroInput] = useState("");
-  const [bairroInput, setBairroInput] = useState("");
+  // const [bairroInput, setBairroInput] = useState("");
   const [estadoInput, setEstadoInput] = useState("");
 
   // const [inputNomeErr, setInputNomeErr] = useState(false);
@@ -61,62 +62,59 @@ const CadastroDoador = () => {
 
 
 
-  //   async function enviarDados(evento) { // exemplo de recebimento de dados ao enviar (onSubmit) o formulário
-  //     evento.preventDefault(); // prevenindo o comportamento padrão do <form>, que é o evento de enviar os dados para outra página
-  //     console.log("Enviando dados!");
+    async function enviarDados(evento) { // exemplo de recebimento de dados ao enviar (onSubmit) o formulário
+      evento.preventDefault(); // prevenindo o comportamento padrão do <form>, que é o evento de enviar os dados para outra página
+      console.log("Enviando dados!");
 
-  //     // criando objeto para enviar os dados para a API
-  //     const DoadorFormatado = { // objeto JSON {}
-  //         nome: nome,
-  //         email: email,
-  //         senha: password,
-  //         nascimento: nascimentoInput,
+      // criando objeto para enviar os dados para a API
+      const DoadorFormatado = { // objeto JSON {}
+          nome: nome,
+          email: email,
+          senha: password,
+          nascimento: nascimentoInput,
 
-  //     };
+      };
 
-  //     const EnderecoFormato = {
-  //         email: email,
-  //         bairro: bairroInput,
-  //         cep: cepInput,
-  //         etado: estadoInput,
-  //         numero: numeroInput,
-  //         cidade: cidadeInput,
+      const EnderecoFormato = {
+          email: email,
+          cep: cepInput,
+          etado: estadoInput,
+          cidade: cidadeInput,
 
-  //     }
+      }
 
-  //     console.log("FORMATAÇÂO: ", DoadorFormatado); // exibindo objeto formatado no console
+      console.log("FORMATAÇÂO: ", DoadorFormatado); // exibindo objeto formatado no console
 
-  //     const service = new CadastroDoadorService();
-  //     await service.cadastrar(DoadorFormatado, EnderecoFormato);
-  //     const res = service.state.res;
+      const service = new CadastroDoadorServico();
+      await service.cadastrar(DoadorFormatado, EnderecoFormato);
+      const res = service.state.res;
 
-  //     switch (res.status) {
-  //         case 200:
-  //             setExibeAlerta(true);
-  //             setAlerta("Já existe uma conta cadastrada com este email!");
-  //             setAlertaTipo("warning");
-  //             break;
+      switch (res.status) {
+          case 200:
+              setExibeAlerta(true);
+              setAlerta("Já existe uma conta cadastrada com este email!");
+              setAlertaTipo("warning");
+              break;
 
-  //         case 201:
-  //             setExibeAlerta(true);
-  //             setExibeAlertaVermelho(false);
-  //             setAlerta("Cadastro concluido com sucesso!");
-  //             setAlertaTipo("success")
-  //             //window.location.href = "/login";
-  //             break;
+          case 201:
+              setExibeAlerta(true);
+              setExibeAlertaVermelho(false);
+              setAlerta("Cadastro concluido com sucesso!");
+              setAlertaTipo("success")
+              break;
 
-  //         case 400:
-  //             setExibeAlerta(true);
-  //             setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
-  //             setAlertaTipo("warning")
-  //             break;
+          case 400:
+              setExibeAlerta(true);
+              setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
+              setAlertaTipo("warning")
+              break;
 
-  //         default : 
-  //             setExibeAlertaVermelho(true)
-  //             setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
-  //             break;
-  //     }
-  // }
+          default : 
+              setExibeAlertaVermelho(true)
+              setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
+              break;
+      }
+  }
 
 
 
@@ -141,7 +139,7 @@ const CadastroDoador = () => {
           </div>
         </TextoEntre>
 
-        <FormGrid>
+        <FormGrid onSubmit={enviarDados}>
           <div className='gridDoador input1'>
             <InputPadrao>
               <label>Nome *: </label>

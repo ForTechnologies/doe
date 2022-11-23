@@ -9,7 +9,7 @@ import './components/botoes/style'
 import Login from "./pages/Login/index.js";
 import CadastroOng from "./pages/CadastroOng/index.js";
 import CadastroDoador from "./pages/CadastroDoador/index.js";
-
+import Teste from "./pages/teste/teste.js";
 
 
 function App() {
@@ -17,9 +17,10 @@ function App() {
   
       <BrowserRouter>
       <Routes> 
-        <Route exact element = { <Login /> }  path="/" />
+        <Route exact element = { <Teste /> }  path="/" />
+        {/* <Route exact element = { <Login /> }  path="/" />
           <Route element = { <CadastroDoador /> }  path="/cadastroDoador" />
-          <Route element = { <CadastroOng /> }  path="/cadastroOng" />
+          <Route element = { <CadastroOng /> }  path="/cadastroOng" /> */}
           </Routes>
          
       </BrowserRouter> 

@@ -16,10 +16,21 @@
 
 
 body {
-    color: rgb(3, 4, 4);
+    color: rgb(0, 0, 0);
     font-family: 'Inter';
 
 }
 
 
+
+
+a:hover {
+    color: #C1272D;
+}
+
+
+.header-logo {
+    height: 50px;
+    margin-right: 25px;
+}
 
