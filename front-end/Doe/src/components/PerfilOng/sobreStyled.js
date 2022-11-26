@@ -106,7 +106,7 @@ export const SecaoSobreStyled = styled.div `
 
 .conteudoSobreOng p {
     padding: 10px 0;
-    font-weight: bold;
+    font-weight: lighter;
     height: 10%;
 
 
@@ -118,7 +118,7 @@ export const SecaoSobreStyled = styled.div `
 
 .conteudoDadosDaEntiedade {
     width: auto;
-    height: 10%;
+    height: 8%;
     margin: 4px 20px auto;
     display: flex;
     justify-content: flex-start;
@@ -140,11 +140,13 @@ export const SecaoSobreStyled = styled.div `
 
 .conteudoTransferenciaBancaria {
     width: auto;
-    height: 10%;
+    height: 6%;
     margin: 4px 20px auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-weight: lighter;
+
 
 }
 
@@ -239,6 +241,7 @@ border-radius: 13px;
 background-color: #FF5555;
 border: 1px solid transparent;
 margin: 10px;
+cursor: pointer;
 
 }
 

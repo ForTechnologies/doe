@@ -5,6 +5,11 @@ import BtnPadrao from '../../components/botoes/style'
 import { FormControl, InputPadrao} from '../../components/Forms/styleForms'
 import { ContainerPadraoForm, ContainerPadraoFoto } from '../../components/Containers/style';
 import fotoContainerLogin from '../../assets/imgs-login/containerfotologin.png';
+import Alert from '@mui/material/Alert';
+
+import LoginService from "../../services/LoginService";
+import constantes from "../../utils/constantes";
+
 
 // import olhoAberto from '../../assets/olhoAberto.png';
 // import olhoFechado from '../../assets/olhoFechado.png';
@@ -16,8 +21,55 @@ import fotoContainerLogin from '../../assets/imgs-login/containerfotologin.png';
 
 const Login = () => {
 
-  const [input, setInput] = useState('');
-  const [hidePass, setHidePass] = useState(true)
+  // const [input, setInput] = useState('');
+  // const [hidePass, setHidePass] = useState(true)
+
+
+
+
+  const [emailInput, setEmailInput] = useState("");
+  const [senhaInput, setSenhaInput] = useState("");
+
+  const [exibeAlertaVermelho, setExibeAlertaVermelho] = useState(false)
+  const [exibeAlerta, setExibeAlerta] = useState(false)
+  const [alerta, setAlerta] = useState("");
+  const [alertaTipo, setAlertaTipo] = useState("");
+
+  async function enviaDados(evento) {
+      evento.preventDefault(); // prevenindo o comportamento padrão do <form>, que é o evento de enviar os dados para outra página
+
+      const service = new LoginService();
+      await service.login(emailInput, senhaInput);
+      const res = service.state.res;
+
+      switch (res.status) {
+          case 200:
+              setExibeAlerta(true);
+              setExibeAlertaVermelho(false)
+              setAlertaTipo("success");
+              setAlerta("Login realizado!")
+              const tipoUsuario = res.data.tipoUsuarioId.id;
+              localStorage.setItem('tipo', tipoUsuario)
+              localStorage.setItem('email', res.data.email)
+              setTimeout(()=>{
+              if(tipoUsuario === constantes.TIPO_DOADOR) {window.location.href = `/doador/perfil`}
+              if(tipoUsuario === constantes.TIPO_ONG) {window.location.href = `/ong/perfil`}
+              }, 2000)
+              break;
+
+          case 204:
+              setExibeAlerta(true);
+              setAlerta("Usuário não encontrado");
+              setAlertaTipo("warning");
+              break;
+
+          default:
+              setExibeAlertaVermelho(true)
+              setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
+              break;
+      }
+  }
+
 
 
   return (
@@ -30,7 +82,7 @@ const Login = () => {
       </ContainerPadraoFoto>
 
       <ContainerPadraoForm>
-        <FormControl>
+        <FormControl onSubmit={enviaDados}>
           <form className='FormControl'>
             <div className='textEntre'>
               <h1>Entrar no DOE!</h1>
@@ -43,7 +95,11 @@ const Login = () => {
               <Input type="text"
                 text="Email"
                 name="teste"
-                placeholder="Digite seu email">
+                placeholder="Digite seu email"
+                onInput={(evento) => { setEmailInput(evento.target.value) }}
+
+                >
+                  
               </Input>
 
 
@@ -55,16 +111,13 @@ const Login = () => {
                 text="Senha"
                 name="senha"
                 placeholder="**********"
-                value={input}
-                onChange={(texto) => setInput(texto)}
+                // value={input}
+                // onChange={(texto) => setInput(texto)}
+                onInput={(evento) => { setSenhaInput(evento.target.value) }}
+               
+
               />
 
-              {/* <DivIconSenha> 
-                <img  onClick={ () => setHidePass(!hidePass) }
-                className='iconOlho' src={olhoFechado} alt="icone olho aberto" sizes="22"></img>
-
-                 </DivIconSenha>
-                 */}
             </InputPadrao>
 
             <div className='btnLogin'>
@@ -72,7 +125,9 @@ const Login = () => {
                 ENTRAR
               </BtnPadrao>
               <p>Nao tem uma conta?
-                <Link to="/cadastroDoador"><span>Cadastre-se</span></Link></p>
+                <Link to="/CadastroDoador"><span>Cadastre-se</span></Link></p>
+                {exibeAlerta ? <Alerta /> : <></>}
+                                {exibeAlertaVermelho ? <AlertaVermelho /> : <></>}
             </div>
           </form>
         </FormControl>
@@ -81,6 +136,25 @@ const Login = () => {
 
 
   );
+
+  function Alerta() {
+    return (
+        <Alert severity={alertaTipo} sx={{ mt: 3 }}>
+            {alerta}
+        </Alert>
+    )
+}
+
+function AlertaVermelho() {
+    return (
+        <Alert variant="filled" severity="error" sx={{ mt: 3 }}>
+            {alerta}
+        </Alert>
+    )
+}
+
+
+
 }
 
 export default Login;

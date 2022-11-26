@@ -5,12 +5,10 @@ import styled from 'styled-components';
 export const CardCampanhasStyled = styled.div `
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
-     margin-top: 20px;
-     justify-content: center;
-     display: flex;
-     
+    background-color: #FFA501;
+   
     .cardCampanha {
-      
+        
         height: 400px;
         width: 25%;
         border-radius: 20px;
@@ -62,14 +60,12 @@ export const CardCampanhasStyled = styled.div `
     text-align: center;
     font-weight: 700;
     text-transform: capitalize;
-    background-color: #FFA501;
 }
 
 .descricaoCardCampanha {
-    width: 100%;
-    height: 70%;
+    width: 100% auto;
+    height: 70% auto;
     padding: 20px;
-    background-color: purple;
 }
 
 .divBotaoCardCampanha {
@@ -78,7 +74,6 @@ export const CardCampanhasStyled = styled.div `
     justify-content: space-around;
     display: flex;  
     align-items: center;
-   background-color: green;
    border-radius: 0px 0px 20px 20px;
 
 }
@@ -96,6 +91,9 @@ export const CardCampanhasStyled = styled.div `
 
 }
 
+.botaoExcluirCampanha {
+    background-color: red;
+}
     
     
     `

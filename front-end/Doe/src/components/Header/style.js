@@ -26,7 +26,9 @@ export const HeaderStyle = styled.div `
      }
 
 
-    
+    a{
+      text-decoration: none;
+    }
      
      div {
         

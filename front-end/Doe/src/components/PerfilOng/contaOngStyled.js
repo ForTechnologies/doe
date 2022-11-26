@@ -2,7 +2,7 @@ import "../../styles/login.css";
 import styled from 'styled-components';
 
 
-export const PerfilOngEstruturaStyled = styled.div `
+export const contaOngEstruturaStyled = styled.div `
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
      
@@ -84,13 +84,45 @@ export const PerfilOngEstruturaStyled = styled.div `
     padding-left: 170px;
 }
 
-.descricaoCardComunidade {
+.divDescricaoCardComunidade  {
     width: 100%;
     height: 45%;
-    padding: 20px 150px;
+    padding-left: 150px !important;
+    padding: 20px;
     font-size: 18px;
+    display: grid;
+   grid-template-columns: 10fr 1fr;
+  
+    
 
 }
+
+.textoDescricaoCard {
+    height: 100%;
+    width: 90%;
+   
+   
+}
+
+
+.divIconeConfiguracoes {
+    height: 100%;
+    width: 100%;
+   
+    display: flex;
+    justify-content: center;
+
+
+   
+}
+
+.iconeConfig {
+    width: 60%;
+    height: 40%;
+    cursor: pointer;
+}
+
+
 
 .divBotaoCardComunidade {
     width: 100%;
@@ -251,4 +283,4 @@ border-radius: 0px 0px 20px 20px;
 `;
 
 
-export default PerfilOngEstruturaStyled;
+export default contaOngEstruturaStyled;

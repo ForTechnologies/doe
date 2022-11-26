@@ -8,6 +8,10 @@ import BtnPadrao from '../../components/botoes/style'
 import { FormGrid, InputPadrao, InputMenorPadrao, TextoEntre } from '../../components/Forms/styleForms'
 import estados from '../../utils/estados.js';
 import { cnpjMask } from '../../utils/cnpjMask'
+import Alert from '@mui/material/Alert';
+
+
+import CadastroOngService from "../../services/CadastroOngService";
 
 
 
@@ -18,10 +22,38 @@ import { cnpjMask } from '../../utils/cnpjMask'
 const CadastroOng = () => {
 
 
-    const [telefoneInput, setTelefoneInput] = useState("");
-    const [cnpjInput, setCnpjInput] = useState("");
-    const [estadoInput, setEstadoInput] = useState("");
 
+
+    // // constante e método responáveis pela máscara de formatação do cnpj
+    // // https://medium.com/reactbrasil/m%C3%A1scara-de-cnpj-com-react-regex-bafb58d2285e
+    // const [values, setValues] = useState({ cnpj: '' })
+    // const inputChange = (e) => {
+    //     const { name, value } = e.target
+    //     setValues({
+    //         ...values,
+    //         [name]: value
+    //     })
+    // }
+
+
+
+    const [nomeInput, setNomeInput] = useState("");
+    const [nomeDirigenteInput, setNomeDirigenteInput] = useState("");
+
+    const [senhaInput, setSenhaInput] = useState("");
+    const [cnpjInput, setCnpjInput] = useState("");
+    const [telefoneInput, setTelefoneInput] = useState("");
+    const [emailContatoInput, setEmailContatoInput] = useState("");
+    const [estadoInput, setEstadoInput] = useState("");
+    const [cidadeInput, setCidadeInput] = useState("");
+    const [ruaInput, setRuaInput] = useState("");
+    const [numeroInput, setNumeroInput] = useState("");
+    const [bairroInput, setBairroInput] = useState("");
+
+    const [exibeAlertaVermelho, setExibeAlertaVermelho] = useState(false)
+    const [exibeAlerta, setExibeAlerta] = useState(false)
+    const [alerta, setAlerta] = useState("");
+    const [alertaTipo, setAlertaTipo] = useState("");
 
     // constante e método responáveis pela máscara de formatação do cnpj
     // https://medium.com/reactbrasil/m%C3%A1scara-de-cnpj-com-react-regex-bafb58d2285e
@@ -29,14 +61,78 @@ const CadastroOng = () => {
     const inputChange = (e) => {
         const { name, value } = e.target
         setValues({
-            ...values,
-            [name]: value
+          ...values,
+          [name]: value
         })
+      }
+
+
+      
+
+
+    async function enviarDados(evento) { // exemplo de recebimento de dados ao enviar (onSubmit) o formulário
+        evento.preventDefault(); // prevenindo o comportamento padrão do <form>, que é o evento de enviar os dados para outra página
+
+        //setCnpjInput(`(${cnpjInput})`);
+        //setTelefoneInput(`(${telefoneInput})`);
+        console.log(cnpjInput, telefoneInput);
+
+
+        // criando objeto para enviar os dados para a API
+        const BancoFormatado = { // objeto JSON {}
+            nome: nomeInput,
+            dirigente: nomeDirigenteInput,
+            senha: senhaInput,
+            cnpj: cnpjInput,
+            telefone: telefoneInput,
+            email: emailContatoInput
+        };
+
+        const EnderecoFormato = {
+            email: emailContatoInput,
+            bairro: bairroInput,
+            rua: ruaInput,
+            numero: numeroInput,
+            cidade: cidadeInput,
+            estado: estadoInput
+        }
+
+        const service = new CadastroOngService();
+        await service.cadastrar(BancoFormatado, EnderecoFormato);
+        const res = service.state.res;
+
+        switch (res.status) {
+            case 200:
+                setExibeAlerta(true);
+                setExibeAlertaVermelho(false);
+                setAlerta("Já existe uma conta cadastrada com este email!");
+                setAlertaTipo("warning");
+                break;
+
+            case 201:
+                setExibeAlerta(true);
+                setExibeAlertaVermelho(false);
+                setAlerta("Cadastro concluido com sucesso!");
+                setAlertaTipo("success")
+                //window.location.href = "/login";
+                break;
+
+            case 400:
+                setExibeAlerta(true);
+                setExibeAlertaVermelho(false);
+                setAlerta(`Campo ${res.data.errors[0].field}: ${res.data.errors[0].defaultMessage}`);
+                setAlertaTipo("warning")
+                break;
+
+            default:
+                setExibeAlertaVermelho(true)
+                setAlerta(`Desculpe, ocorreu um erro inesperado.`);
+                break;
+        }
     }
 
 
 
-    
 
 
 
@@ -62,11 +158,13 @@ const CadastroOng = () => {
                 </TextoEntre>
 
 
-                <FormGrid>
+                <FormGrid onSubmit={enviarDados}>
                     <div className='gridOng input1'>
                         <InputPadrao>
                             <label>Nome do dirigente *:</label>
                             <input
+                                onInput={(evento) => { setNomeDirigenteInput(evento.target.value) }}
+
                                 id="idNome"
                                 type="text"
                                 text="Nome do dirigente *"
@@ -80,6 +178,7 @@ const CadastroOng = () => {
                         <InputPadrao>
                             <label>Nome da ong *:</label>
                             <input
+                                onInput={(evento) => { setNomeInput(evento.target.value) }}
                                 type="text"
                                 text="NomeOng"
                                 name="teste"
@@ -93,6 +192,7 @@ const CadastroOng = () => {
                         <InputPadrao>
                             <label>Email principal *:</label>
                             <input
+                                 onInput={(evento) => { setEmailContatoInput(evento.target.value) }}
                                 id="emailPrincipal"
                                 type="text"
                                 text=" *"
@@ -106,6 +206,8 @@ const CadastroOng = () => {
                         <InputPadrao>
                             <label>Endereço *:</label>
                             <input
+                                onInput={(evento) => { setRuaInput(evento.target.value) }}
+
                                 type="text"
                                 text="Endereço *"
                                 name="teste"
@@ -131,6 +233,7 @@ const CadastroOng = () => {
                         <InputMenorPadrao>
                             <label>Numero *:</label>
                             <input
+                             onInput={(evento) => { setNumeroInput(evento.target.value) }}
                                 type="number"
                                 text="Numero *"
                                 name="teste"
@@ -140,6 +243,7 @@ const CadastroOng = () => {
 
                         <InputMenorPadrao>
                             <Input
+                                onInput={(evento) => { setBairroInput(evento.target.value) }}
                                 type="text"
                                 text="Bairro *"
                                 name="teste"
@@ -184,7 +288,9 @@ const CadastroOng = () => {
                                 text="Cidade *"
                                 name="teste"
                                 placeholder="Selecione sua cidade"
-                                required>
+                                onInput={(evento) => { setCidadeInput(evento.target.value) }}
+                                required
+                            >
                             </Input>
                         </InputMenorPadrao>
                     </div>
@@ -193,6 +299,7 @@ const CadastroOng = () => {
                         <InputPadrao>
                             <label>Senha *:</label>
                             <input
+                               onInput={(evento) => { setSenhaInput(evento.target.value) }}
                                 type="password"
                                 name="senha"
                                 placeholder="Digite uma senha forte"
@@ -215,11 +322,31 @@ const CadastroOng = () => {
                             REGISTRAR CONTA
                         </BtnPadrao>
                     </div>
+                    {exibeAlerta ? <Alerta /> : <></>}
+                        {exibeAlertaVermelho ? <AlertaVermelho /> : <></>}
                 </FormGrid>
             </ContainerPadraoForm>
         </div>
 
     );
+
+
+
+    function Alerta() {
+        return (
+            <Alert severity={alertaTipo} sx={{ mt: 3 }}>
+                {alerta}
+            </Alert>
+        )
+    }
+
+    function AlertaVermelho() {
+        return (
+            <Alert variant="filled" severity="error" sx={{ mt: 3 }}>
+                {alerta}
+            </Alert>
+        )
+    }
 
 }
 

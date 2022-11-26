@@ -16,7 +16,7 @@ export const Campanha = () => {
   <CardCampanhasStyled>
 
 
-  <div className='cardCampanha'>
+  <div className='cardCampanha  divEspacoCardCampanha'>
 
 <div className='divCapaCampanha'>
   <img src={Gato}></img>
@@ -28,8 +28,7 @@ export const Campanha = () => {
   <div className='descricaoCardCampanha'>
   <p>Campanha destinado a arrecadação de agasalhos da ong @juntosNoInverno. Nossa campanha tem como meta agasalhar mais de 100 moradores de rua localizados......Campanha destinado a arrecadação de agasalhos.  Nossa campanha...</p></div>
   <div className='divBotaoCardCampanha'>
-  <button className='botaoCardCampanha'>Entrar</button>
-        
+  <button className='botaoCardCampanha'>Doar</button>
   </div>
   
 

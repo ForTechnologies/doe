@@ -20,6 +20,18 @@ body {
 .divEspacoHeader {
     margin-left: 18%;
     padding-top: 12vh;
+
+}
+
+.divEspacoHeaderCampanha {
+    margin-left: 18%;
+     
+
+}
+
+.divEspacoCardCampanha {
+    margin-left: 10%;
+   
 }
 
 .divEspacoHeaderContainerSobreOng {
@@ -29,5 +41,8 @@ body {
 
 
 
-
+a {
+   text-decoration: none;
+   color: black;
+}
 

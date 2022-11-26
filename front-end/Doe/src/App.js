@@ -1,29 +1,30 @@
 import React from 'react';
-import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import './styles/login.css'
 import './global.css'
 import './components/Forms/styleForms.js'
 import './components/botoes/style'
+import { Header } from './components/Header/header';
+import Routes from './Routes';
 
 
-import Login from "./pages/Login/index.js";
-import CadastroOng from "./pages/CadastroOng/index.js";
-import CadastroDoador from "./pages/CadastroDoador/index.js";
-import Teste from "./pages/teste/teste.js";
+
+// import Login from "./pages/Login/index.js";
+// import CadastroOng from "./pages/CadastroOng/index.js";
+// import CadastroDoador from "./pages/CadastroDoador/index.js";
+// import Teste from "./pages/teste/teste.js";
+
+// import PerfilOng from './pages/perfilOngDoador/contaDoador';
 
 
 function App() {
   return (
+
+<BrowserRouter>
+<Routes></Routes>
+
+</BrowserRouter>
   
-      <BrowserRouter>
-      <Routes> 
-        {/* <Route exact element = { <Teste /> }  path="/" /> */}
-        <Route exact element = { <Login /> }  path="/" />
-          <Route element = { <CadastroDoador /> }  path="/cadastroDoador" />
-          <Route element = { <CadastroOng /> }  path="/cadastroOng" />
-          </Routes>
-         
-      </BrowserRouter> 
   );
 }
 
