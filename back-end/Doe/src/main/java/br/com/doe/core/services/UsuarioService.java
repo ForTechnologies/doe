@@ -7,10 +7,11 @@ import br.com.doe.core.entities.Usuario;
 import br.com.doe.core.repositories.UsuarioRepository;
 import br.com.doe.core.services.exceptions.ConflictException;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
@@ -21,8 +22,11 @@ public class UsuarioService {
     private UsuarioRepository repositorio;
     private UsuarioMapper mapper;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     public void criar(@Valid UsuarioDto dto) {
-        String senhaCriptografada = new BCryptPasswordEncoder().encode(dto.getSenha());
+        String senhaCriptografada = passwordEncoder.encode(dto.getSenha());
         dto.setSenha(senhaCriptografada);
         Usuario entity = mapper.dtoToEntity(dto);
         try {
