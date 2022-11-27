@@ -8,8 +8,8 @@ class LoginService {
         };
     }
 
-    login(email, senha) {
-        return api.post(`/usuario/login?email=${email}&senha=${senha}`)
+    login(LoginUsuario) {
+        return api.post(`/login`, LoginUsuario)
         .then((res) => { 
             console.log(res)
             this.state.res = res })

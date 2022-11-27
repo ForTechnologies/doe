@@ -35,11 +35,23 @@ const Login = () => {
   const [alerta, setAlerta] = useState("");
   const [alertaTipo, setAlertaTipo] = useState("");
 
+
+
+  
+
   async function enviaDados(evento) {
+
       evento.preventDefault(); // prevenindo o comportamento padrão do <form>, que é o evento de enviar os dados para outra página
 
+
+      const LoginUsuario = { // objeto JSON {}
+        senha: senhaInput,
+        email: emailInput
+    };
+
+
       const service = new LoginService();
-      await service.login(emailInput, senhaInput);
+      await service.login(LoginUsuario);
       const res = service.state.res;
 
       switch (res.status) {
@@ -52,8 +64,8 @@ const Login = () => {
               localStorage.setItem('tipo', tipoUsuario)
               localStorage.setItem('email', res.data.email)
               setTimeout(()=>{
-              if(tipoUsuario === constantes.TIPO_DOADOR) {window.location.href = `/doador/perfil`}
-              if(tipoUsuario === constantes.TIPO_ONG) {window.location.href = `/ong/perfil`}
+              if(tipoUsuario === constantes.TIPO_DOADOR) {window.location.href = `/PerfilUusario`}
+              if(tipoUsuario === constantes.TIPO_ONG) {window.location.href = `/PerfilOng`}
               }, 2000)
               break;
 
