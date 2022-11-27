@@ -1,11 +1,14 @@
 package br.com.doe.core.services;
 
+import br.com.doe.core.controllers.exception.NotFoundException;
 import br.com.doe.core.dtos.CampanhaDto;
 import br.com.doe.core.controllers.mappers.CampanhaMapper;
 import br.com.doe.core.entities.Campanha;
 import br.com.doe.core.entities.Ong;
 import br.com.doe.core.repositories.CampanhaRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +24,7 @@ public class CampanhaService {
         repositorio.save(campanha);
     }
 
-    public List<CampanhaDto> getCampanhasPorOng(int id) {
+    public List<CampanhaDto> buscarCampanhasPorOng(int id) {
         return repositorio.findCampanhaByOngId(id)
                 .stream().map(entity -> mapper.entityToDto(entity))
                 .collect(Collectors.toList());
@@ -29,5 +32,16 @@ public class CampanhaService {
 
     public void deletar(int id) {
         repositorio.deleteById(id);
+    }
+
+    public CampanhaDto atualizar(int id,CampanhaDto campanha){
+        if(!repositorio.existsById(id)) {
+            throw new NotFoundException("Campanha não encontrada");
+        }
+
+        Campanha entidade = mapper.dtoToEntity(campanha);
+        entidade.setId(id);
+        return mapper.entityToDto(repositorio.save(entidade));
+
     }
 }
