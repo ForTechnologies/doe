@@ -23,8 +23,8 @@ public class WebConfigSecurity {
         http.csrf().disable()
                 .authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
+                .antMatchers("/login").permitAll()
                 .antMatchers("/teste").authenticated()
-                .antMatchers("/login").permitAll().and().httpBasic()
                 .and().logout(logout -> logout.invalidateHttpSession(true)
                                 .deleteCookies().clearAuthentication(true)
                                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK)));

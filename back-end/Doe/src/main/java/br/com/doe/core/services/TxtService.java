@@ -28,7 +28,8 @@ public class TxtService {
         }
 
         try {
-            saida.append(registro + "\n");
+            assert saida != null;
+            saida.append(registro).append("\n");
             saida.close();
         } catch (IOException var4) {
             System.out.println("Erro ao gravar o arquivo");
@@ -122,19 +123,4 @@ public class TxtService {
 
     }
 
-    public static void main(String[] args) {
-        Ong ong = new Ong();
-        List<CampanhaDto> lista = new ArrayList();
-        lista.add(new CampanhaDto("Campanha Daora", LocalDate.now(), LocalDate.now(), "Estrutura de Dados", "AAAAAAA", ong ));
-
-        System.out.println("Lista original:");
-        Iterator var2 = lista.iterator();
-
-        while(var2.hasNext()) {
-            Campanha c = (Campanha)var2.next();
-            System.out.println(c);
-        }
-
-        leArquivoTxt("campanha.txt");
-    }
 }
