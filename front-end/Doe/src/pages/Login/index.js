@@ -45,10 +45,12 @@ const Login = () => {
 
 
       const LoginUsuario = { // objeto JSON {}
-        senha: senhaInput,
-        email: emailInput
+        email: emailInput,
+        senha: senhaInput
+        
     };
 
+     console.log(LoginUsuario);
 
       const service = new LoginService();
       await service.login(LoginUsuario);
@@ -104,15 +106,18 @@ const Login = () => {
 
 
             <InputPadrao>
-              <Input type="text"
-                text="Email"
-                name="teste"
+              <input
+                type="text"
+                text="email"
+                name="email"
                 placeholder="Digite seu email"
+                // value={input}
+                // onChange={(texto) => setInput(texto)}
                 onInput={(evento) => { setEmailInput(evento.target.value) }}
 
-                >
+                />
                   
-              </Input>
+            
 
 
               <label>Senha *</label>
