@@ -79,7 +79,7 @@ const CadastroOng = () => {
 
 
         // criando objeto para enviar os dados para a API
-        const BancoFormatado = { // objeto JSON {}
+        const OngFormatado = { // objeto JSON {}
             nome: nomeInput,
             dirigente: nomeDirigenteInput,
             senha: senhaInput,
@@ -98,7 +98,7 @@ const CadastroOng = () => {
         }
 
         const service = new CadastroOngService();
-        await service.cadastrar(BancoFormatado, EnderecoFormato);
+        await service.cadastrar(OngFormatado, EnderecoFormato);
         const res = service.state.res;
 
         switch (res.status) {
