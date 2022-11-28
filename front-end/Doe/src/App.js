@@ -4,7 +4,7 @@ import './styles/login.css'
 import './global.css'
 import './components/Forms/styleForms.js'
 import './components/botoes/style'
-import { Header } from './components/Header/header';
+import { Header } from './components/Headeer/header';
 import Routes from './Routes';
 
 

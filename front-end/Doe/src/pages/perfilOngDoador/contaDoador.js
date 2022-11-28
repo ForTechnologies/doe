@@ -6,7 +6,7 @@ import SecaoSobre from '../../components/PerfilOng/secaoSobre';
 
 import React from 'react'
 
-import { Header } from '../../components/Header/header';
+import { Header } from '../../components/Headeer/header';
 import Campanha  from '../../components/Campanhas/campanha';
 
 
@@ -15,7 +15,7 @@ function contaDoador() {
    <>
 
 
-  
+  <Header></Header>
   <contaOngEstrutura></contaOngEstrutura>
   <Campanha></Campanha>
    

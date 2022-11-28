@@ -1,0 +1,24 @@
+header {
+    height: 80px;
+    border-bottom: 1px solid gray;
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
+    box-shadow: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #C1272D;
+}
+
+
+.header-logo {
+    height: 50px;
+    margin-right: 25px;
+}
