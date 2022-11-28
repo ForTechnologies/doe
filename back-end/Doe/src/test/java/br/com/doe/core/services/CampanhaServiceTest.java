@@ -7,12 +7,9 @@ import br.com.doe.core.entities.Campanha;
 import br.com.doe.core.repositories.CampanhaRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.ResponseEntity;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,8 +53,4 @@ class CampanhaServiceTest {
         when(repositorio.existsById(idTeste)).thenReturn(false);
         assertThrows(NotFoundException.class, () -> service.atualizar(idTeste,campanhaDtoTeste));
     }
-
-
-
-
 }
