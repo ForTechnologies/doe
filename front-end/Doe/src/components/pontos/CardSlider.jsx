@@ -61,6 +61,7 @@ export default function CardSlider() {
             }
         ]
     };
+    
     return (
         <div>
             <Slider {...settings} >

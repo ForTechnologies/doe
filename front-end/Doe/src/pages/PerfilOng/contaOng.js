@@ -18,7 +18,8 @@ import contaOngEstruturaStyled from '../../components/PerfilOng/contaOngStyled';
 
 function ContaOng() {
 
-  const listaCampanhas = [];
+  const [listaCampanhas, setListaCampanhas] = useState([]);
+
 
 
   for (let index = 0; index < 10; index++) {
@@ -28,30 +29,17 @@ function ContaOng() {
 
 
 
-  // useEffect(() => {
-  //   api
-  //     .get()
-  //     .then((res) => {
-  //       setListaCampanhas(res.data.reverse());
-  //     })
-  //     .catch((erro) => {
-  //       console.log(erro);
-  //     });
-  // }, []);
+  useEffect(() => {
+    api
+      .get()
+      .then((res) => {
+        setListaCampanhas(res.data.reverse());
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+  }, []);
 
-
-  function deletarCampanha(index) {
-    index = -1;
-
-    // api
-    //   .delete(`/${id}`)
-    //   .then((resposta) => {
-    //     setListaCampanhas(listaCampanhas.filter((campanha) => campanha.id !== id));
-    //   })
-    //   .catch((erro) => {
-    //     alert("Erro ao deletar, procure ajuda");
-    //   });
-  }
 
 
 
@@ -74,7 +62,7 @@ function ContaOng() {
       descricao={campanha.descricao}
       capa={campanha.imagem}
       id={campanha.id}
-      funcaoDeletar={deletarCampanha}
+      // funcaoDeletar={deletarCampanha}
     />
   ))}
 

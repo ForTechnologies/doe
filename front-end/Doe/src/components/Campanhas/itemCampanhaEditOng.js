@@ -16,11 +16,14 @@ function CampanhaEditOng(props) {
 
 
 
-  const [tituloInput, setTituloInput] = useState("teste");
-  const [descricaoInput, setDescricaoInput] = useState("Campanha destinado a arrecadaçãokkskkskksksksksk de agasalhos allalallalallaallala");
-  const [imagemInput, setImagemInput] = useState("");
+  const [tituloInput, setTituloInput] = useState(props.titulo);
+  const [descricaoInput, setDescricaoInput] = useState(props.descricao);
+  const [imagemInput, setImagemInput] = useState(props.imagem);
 
   const [editavel, setEditavel] = useState(false);
+
+
+   
 
   console.log(tituloInput);
   console.log(descricaoInput);
@@ -127,9 +130,11 @@ function CampanhaEditOng(props) {
               <button
                 onClick={() => setEditavel(!editavel)}
                  
-                className='botaoCardCampanha botaoAtualizarCampanha'>Atualizar</button>
+                className='botaoCardCampanha botaoAtualizarCampanha'
+               
+                >Atualizar</button>
               <button className='botaoCardCampanha botaoExcluirCampanha'
-              onClick={() => props.funcaoDeletar(props.id)}
+               onClick={editar}
               >Excluir</button>
 
             </div>

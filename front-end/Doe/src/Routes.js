@@ -8,7 +8,7 @@ import PerfilOng from './pages/PerfilOng/contaOngSecaoSobre'
 import PerfilOngCampanha from './pages/PerfilOng/contaOng'
 
 import ContaOngAdicionarCampanha from './pages/PerfilOng/contaOngAdicionarCampanha'
-import ContaOngTelaConfig from './pages/PerfilOng/contaOngTelaConfig'
+import ContaOngTelaConfig from './pages/PerfilOng/contaOngEditarDados'
 
 import CadastroDoador from './pages/CadastroDoador/index';
 import CadastroOng from './pages/CadastroOng/index'
@@ -16,6 +16,7 @@ import Login from './pages/Login/index';
 
 import ProcurarCampanhas from "./pages/Campanhas/Campanhas"
 import ProcurarComunidades from "./pages/Comunidades/comunidades"
+
 
 import PontosDeDoacao from './pages/pontosDeDoacao/PontosDeDoacao';
 
@@ -56,7 +57,7 @@ export default () => {
      <Route exact path="/ContaOngAdicionarCampanha" element={<ContaOngAdicionarCampanha />}>
      </Route>
 
-     <Route exact path="/ContaOngTelaConfig" element={<ContaOngTelaConfig />}>
+     <Route exact path="/EditarDadosOng" element={<ContaOngTelaConfig />}>
      </Route>
 
      <Route exact path="/ProcurarCampanhas" element={<ProcurarCampanhas />}>

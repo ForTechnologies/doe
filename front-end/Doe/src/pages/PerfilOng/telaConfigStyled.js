@@ -30,7 +30,7 @@ export const ContaConfigStyled = styled.div `
     background-color: aliceblue;
     z-index: 300;
     height: auto;
-    width: 60%;
+    width: 50%;
     opacity: 1.0; //1.0 = totalmente opaco, 0.0 = totalmente transparente
    display: flex;
    flex-direction: column;

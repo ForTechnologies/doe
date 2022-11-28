@@ -63,7 +63,8 @@ function ContaOngEstrutura() {
       <div className='abasPerfilOng'>
       <p><Link to="/PerfilOng">Sobre</Link></p>
       <p><Link to="/PerfilOngCampanha">Campanhas</Link></p>
-      <p><Link to="/ContaOngAdicionarCampanha">Metricas</Link></p>
+      <p><Link to="/ContaOngAdicionarCampanha">Nova campanha</Link></p>
+      <p><Link to="/EditarDadosOng">Editar dados</Link></p>
 
       </div>
       
