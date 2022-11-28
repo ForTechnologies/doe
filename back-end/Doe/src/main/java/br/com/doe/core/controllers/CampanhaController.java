@@ -17,6 +17,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController @RequestMapping("/campanhas")  @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class CampanhaController {
     private CampanhaService service;
 
