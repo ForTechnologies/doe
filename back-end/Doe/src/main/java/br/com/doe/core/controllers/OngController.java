@@ -16,6 +16,7 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/ongs")
+@CrossOrigin(origins = "http://localhost:3000")
 public class OngController {
     private OngService service;
     @PostMapping
