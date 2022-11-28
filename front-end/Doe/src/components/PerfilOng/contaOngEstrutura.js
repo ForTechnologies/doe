@@ -3,7 +3,7 @@ import ContaOngEstruturaStyled from './contaOngStyled';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import Gato from '../../assets/gato.webp'
 import SecaoSobre from './secaoSobre';
-import { Header } from '../Header/header';
+import { Header } from '../Headeer/header';
 import Campanha from '../Campanhas/campanha';
 import { Link } from 'react-router-dom';
 import PerfilOngEstruturaStyled from './contaDoadorStyle';
@@ -48,7 +48,7 @@ function ContaOngEstrutura() {
       </div>
       <div className='divIconeConfiguracoes'>
 
-        <img src={IconeConfiguracao} className="iconeConfig"></img>
+       <Link to="/ContaOngTelaConfig"> <img src={IconeConfiguracao} className="iconeConfig"></img> </Link> 
       </div>
       </div>
      
@@ -61,9 +61,10 @@ function ContaOngEstrutura() {
       </div>
 
       <div className='abasPerfilOng'>
-      <p><Link to="/PerfilOng">bre</Link></p>
+      <p><Link to="/PerfilOng">Sobre</Link></p>
       <p><Link to="/PerfilOngCampanha">Campanhas</Link></p>
-      <p><Link to="/ContaOngAdicionarCampanha">Metricas</Link></p>
+      <p><Link to="/ContaOngAdicionarCampanha">Nova campanha</Link></p>
+      <p><Link to="/EditarDadosOng">Editar dados</Link></p>
 
       </div>
       

@@ -6,7 +6,7 @@ import SecaoSobre from '../../components/PerfilOng/secaoSobre';
 
 import React from 'react'
 
-import { Header } from '../../components/Header/header';
+import { Header } from '../../components/Headeer/header';
 import Campanha  from '../../components/Campanhas/campanha';
 
 import CriarCampanha from '../../components/Campanhas/criarCampanha';
@@ -16,7 +16,7 @@ function ContaOngSecaoSobre() {
    <>
 
 
-  
+  <Header></Header>
   <ContaOngEstrutura></ContaOngEstrutura>
   <SecaoSobre></SecaoSobre>
   

@@ -4,6 +4,8 @@ import FotoLogo from '../../assets/logoTipoDoe.png'
 import ProcurarIcone from '../../assets/procurarIcone.png'
 import NotificacaoIcone from '../../assets/notificacaoIcone.png'
 import Gato from '../../assets/gato.webp'
+import { Link } from 'react-router-dom';
+
 
 
 export const Header = () => {
@@ -47,14 +49,19 @@ export const Header = () => {
             
               <div className='Text'>
               <li>
-                <a href="#home">Comunidades</a>
-
-            <span className='linha'></span>
+                <Link to="/procurarComunidades"> <a>Comunidades</a></Link>
+              
             </li>
             </div>
 
 
-            <li><a href="#news">Campanhas</a></li>
+            <li> <Link to="/procurarCampanhas">
+            <a>Campanhas</a>
+            </Link> </li>
+              
+
+
+
             <li><a href="#contact">LocalizarOngs</a></li>
           </ul>
           </div>

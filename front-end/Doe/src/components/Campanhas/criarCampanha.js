@@ -20,10 +20,11 @@ export const CriarCampanha = () => {
 
 
     function cadastrar(event) {
+      
         event.preventDefault();
     
         const novaCampanha = {
-          nome: event.target.nome.value,
+          titulo: event.target.nome.value,
           descricao: event.target.descricao.value,
           imagem: event.target.imagem.value
         };
@@ -79,13 +80,13 @@ export const CriarCampanha = () => {
             <br />
             <form onSubmit={cadastrar}>
             <label>
-                {/* {" "} */}
+                {" "}
                Capa da campanha (url): <br />
                 <input name="imagem" type="text"/>
               </label>
               <label>
                 Titulo: <br />
-                <input name="nome" type="text"/>
+                <input name="titulo" type="text"/>
               </label>
               <label>
                 Descricao: <br />

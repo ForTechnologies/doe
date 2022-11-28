@@ -1,19 +1,48 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ContaOngEstrutura from '../../components/PerfilOng/contaOngEstrutura';
 import PerfilOngEstrutura from '../../components/PerfilOng/contaDoadorEstrutura';
 import SecaoSobre from '../../components/PerfilOng/secaoSobre';
 
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import api from "../../api";
 
-import Header from '../../components/Header/header';
+
+import Header from '../../components/Headeer/header';
 import Campanha  from '../../components/Campanhas/campanha';
-import CampanhaEditOng from '../../components/Campanhas/campanhaEditOng';
+import CampanhaEditOng from '../../components/Campanhas/itemCampanhaEditOng';
 
 import CriarCampanha from '../../components/Campanhas/criarCampanha';
 import contaOngEstruturaStyled from '../../components/PerfilOng/contaOngStyled';
 
+// import itemCampanhaEdit from '../../components/Campanhas/itemCampanhaEditOng'
+
 function ContaOng() {
+
+  const [listaCampanhas, setListaCampanhas] = useState([]);
+
+
+
+  for (let index = 0; index < 10; index++) {
+    listaCampanhas.push(index);
+     
+   }
+
+
+
+  useEffect(() => {
+    api
+      .get()
+      .then((res) => {
+        setListaCampanhas(res.data.reverse());
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+  }, []);
+
+
+
+
   return (
    <>
 
@@ -21,10 +50,33 @@ function ContaOng() {
   <ContaOngEstrutura></ContaOngEstrutura>
   <div className='divEspacoHeaderCampanha'>
 
-  <CampanhaEditOng></CampanhaEditOng>
+
+  <div className="container">
+
+<div className="music-boxes">
+
+  {listaCampanhas.map((campanha) => (
+    <CampanhaEditOng
+      key={campanha.id}
+      titulo={campanha.titulo}
+      descricao={campanha.descricao}
+      capa={campanha.imagem}
+      id={campanha.id}
+      // funcaoDeletar={deletarCampanha}
+    />
+  ))}
+
+
+</div>
+</div>
+
+
+
+
+ 
   
 <div className='teste'> 
-<button></button>
+<button>aaaa</button>
 </div>
   
   </div>

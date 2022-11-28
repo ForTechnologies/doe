@@ -16,7 +16,7 @@ export const Campanha = () => {
   <CardCampanhasStyled>
 
 
-  <div className='cardCampanha  divEspacoCardCampanha'>
+  <div className='music-boxes divEspacoCardCampanha'>
 
 <div className='divCapaCampanha'>
   <img src={Gato}></img>

@@ -3,7 +3,7 @@ import PerfilOngEstruturaStyled from './contaDoadorStyle';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import Gato from '../../assets/gato.webp'
 import SecaoSobre from './secaoSobre';
-import { Header } from '../Header/header';
+import { Header } from '../Headeer/header';
 import Campanha from '../Campanhas/campanha';
 
 import { Link } from 'react-router-dom';
