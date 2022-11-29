@@ -16,7 +16,7 @@ public class Campanha extends BaseEntity {
     private String descricao;
     private String urlImagem;
 
-    @ManyToOne
+    @ManyToOne()
     @JoinColumn(name = "ong_id")
     private Ong ong;
 

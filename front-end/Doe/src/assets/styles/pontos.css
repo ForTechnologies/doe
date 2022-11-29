@@ -1,0 +1,120 @@
+.pontos {
+    padding: 20px;
+    margin: auto;
+}
+    .div-mapa {
+        margin: auto;
+        max-width: 1300px;
+    }
+        .mapa {
+            margin-top: 10px;
+            width: 100%;
+        }
+    
+
+    .div-cards {
+        margin: auto;
+        padding-top: 50px;
+        max-width: 1300px;
+    }
+        .cards {        
+            margin: auto;
+            max-width: 96%;
+        }
+
+            .card-info {
+                display: flex;
+                margin: auto;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+
+
+.card-info {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal{
+    position: fixed ;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+}
+
+    .box-modal-endereco {
+        width: 500px;
+        background-color: white;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-modal-card {
+        width: 600px;
+        background-color: white;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        text-align: center; }
+
+        .container-modal-card {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            text-align: center;
+        }
+
+            .niveis-card {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                max-width: 500px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+                .box-nivel-card {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 100px;
+                    padding: 10px;
+
+                    font-size: 20px;
+                    font-weight: bold; }
+
+                    .imagem-nivel-card {
+                        width: 70px;
+                        margin-right: 8px;
+                    }                
+              
+
+        .legenda-card{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: left;
+            padding-bottom: 30px; }
+
+            .cor-legenda-card {
+                width: 20px;
+                height: 20px;
+                background-color: aqua;
+                margin-right: 10px; }
+          

@@ -2,23 +2,42 @@ import "../../styles/login.css";
 import styled from 'styled-components';
 
 
-export const CardCampanhasStyled = styled.div `
+export const CardCampanhasStyled = styled.div`
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
-     margin-top: 20px;
-     justify-content: center;
-     display: flex;
-     
+  
+
+margin: 0px 34px;
+justify-content: center;
+display: flex;
+margin-bottom: 40px;
+
+
     .cardCampanha {
-      
-        height: 400px;
-        width: 25%;
+        
+        height: 550px;
+        width: 440px;
         border-radius: 20px;
-        box-shadow: 0px 0px 1px black;
-         
-       
+        box-shadow: 0px 0px 1px black;    
 
     }
+
+
+    .cardCampanha, input, textarea {
+        border: 0;
+        outline: 0;
+         -webkit-box-shadow: none;
+          box-shadow: none;
+    }
+
+    .inputAtualizarCapa {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+
+       
+    }
+
 
     .divCapaCampanha {
         height: 30%;
@@ -47,43 +66,72 @@ export const CardCampanhasStyled = styled.div `
         width: 100%;
         transform: translate(0%, -0%);
         background-color: #ffff;
+        
 
     }
      
 
 .tituloCardCampanha {
-    
+    padding: 0 20px;
     width: 100%;
     height: 15%;
-    padding: 10px;
+   
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+
+}
+
+.tituloCardCampanha input {
+
     position: relative;
+    width: 100%;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-weight: 700;
     text-transform: capitalize;
-    background-color: #FFA501;
+    font-size: 20px;
+
 }
 
+
+
 .descricaoCardCampanha {
-    width: 100%;
-    height: 70%;
-    padding: 20px;
-    background-color: purple;
+    width: 100% auto;
+    height: 60%;
+    padding: 0 20px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 }
+
+.descricaoCardCampanha textArea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: flex-start;
+}
+
 
 .divBotaoCardCampanha {
     width: 100%;
-    height: 30%;
+    height: 20%;
     justify-content: space-around;
     display: flex;  
     align-items: center;
-   background-color: green;
-   border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 20px 20px;
+   
 
 }
 
-.botaoCardCampanha {
+.botaoCardCampanha, button {
     height: 40px;
     width: 150px;
     transform: translate(0%, -0%);
@@ -96,6 +144,19 @@ export const CardCampanhasStyled = styled.div `
 
 }
 
+.botaoExcluirCampanha {
+    background-color: red;
+}
+
+
+.inputAtualizarCapa {
+   align-items: center;
+    display: flex;
+}
+
+.inputAtualizarCapa input{
+   width: 90%;
+}
     
     
     `

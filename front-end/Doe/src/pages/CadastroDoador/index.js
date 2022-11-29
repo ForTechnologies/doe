@@ -8,8 +8,7 @@ import { FormGrid, InputPadrao, InputMenorPadrao, TextoEntre } from '../../compo
 import { validEmail, validPassword } from "../../utils/regex";
 import estados from '../../utils/estados.js';
 import Alert from '@mui/material/Alert';
-import CadastroDoadorServico from '../../services/CadastroDoadorService';
-// import CadastroDoadorService from "../../services/CadastroDoadorService";
+import CadastroDoadorService from "../../services/CadastroDoadorService";
 
 
 
@@ -71,7 +70,7 @@ const CadastroDoador = () => {
           nome: nome,
           email: email,
           senha: password,
-          nascimento: nascimentoInput,
+          dataNascimento: nascimentoInput,
 
       };
 
@@ -85,7 +84,7 @@ const CadastroDoador = () => {
 
       console.log("FORMATAÇÂO: ", DoadorFormatado); // exibindo objeto formatado no console
 
-      const service = new CadastroDoadorServico();
+      const service = new CadastroDoadorService();
       await service.cadastrar(DoadorFormatado, EnderecoFormato);
       const res = service.state.res;
 
@@ -139,7 +138,10 @@ const CadastroDoador = () => {
           </div>
         </TextoEntre>
 
+        
+      
         <FormGrid onSubmit={enviarDados}>
+         
           <div className='gridDoador input1'>
             <InputPadrao>
               <label>Nome *: </label>
@@ -248,10 +250,10 @@ const CadastroDoador = () => {
           </div>
           {exibeAlerta ? <Alerta /> : <></>}
           {exibeAlertaVermelho ? <AlertaVermelho /> : <></>}
+         
         </FormGrid>
       </ContainerPadraoForm>
     </div>
-
 
 
   );

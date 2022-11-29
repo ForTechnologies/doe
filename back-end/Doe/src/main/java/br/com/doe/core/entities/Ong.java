@@ -12,6 +12,7 @@ import java.time.LocalDate;
 @Getter @Setter
 public class Ong extends BaseEntity{
     private String nome;
+
     @Size(max=14)
     private String cnpj;
 

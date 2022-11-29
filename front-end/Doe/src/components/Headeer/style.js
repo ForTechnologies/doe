@@ -22,7 +22,7 @@ export const HeaderStyle = styled.div`
 
 
      .containerHeader {
-      flex-direction: column;
+     flex-direction: column;
      height: 12vh;
      width: 100%;
      position: absolute;
@@ -31,14 +31,20 @@ export const HeaderStyle = styled.div`
      background-color: #FFFFFF;
      box-shadow: 0px 0px 4px black;
      z-index: 200;
+<<<<<<< HEAD:front-end/Doe/src/components/Header/style.js
      left: 0px;
      top: 0px;
   }
+=======
+    
+>>>>>>> 68d1eeed62bae7ed8c19956a54dfa0b8cdd6cfcc:front-end/Doe/src/components/Headeer/style.js
 
      }
 
 
-    
+    a{
+      text-decoration: none;
+    }
      
      div {
         
@@ -112,6 +118,7 @@ export const HeaderStyle = styled.div`
     justify-content: center;
     align-items: center;
     content: max;
+    overflow: hidden;
 
 }
 
@@ -167,11 +174,11 @@ export const HeaderStyle = styled.div`
     }
 
     .divListaPaginas a {
-      width: 90%;
+      width: 100%;
       height: auto;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid grey;
+      border-bottom: 0.1rem solid grey;
 
     }
 

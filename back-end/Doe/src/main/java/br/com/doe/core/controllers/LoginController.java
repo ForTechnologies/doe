@@ -6,11 +6,10 @@ import br.com.doe.core.repositories.UsuarioRepository;
 import br.com.doe.core.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.codec.Utf8;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Base64;
 import java.util.HashMap;
@@ -18,26 +17,25 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/login")
+@CrossOrigin(origins = "http://localhost:3000")
 public class LoginController {
     @Autowired
     LoginService service;
 
-    @Autowired
-    UsuarioRepository repositorio;
 
     @PostMapping
     public ResponseEntity<?> login(@RequestBody UsuarioDto user){
-        String token = ""+ user.getEmail() +":" + user.getSenha();
-        token = Base64.getEncoder().encodeToString(token.getBytes());
+        Boolean usuarioValidado = service.login(user);
 
-        if(!repositorio.findByEmailAndSenha(user.getEmail(), user.getSenha())){
-            return ResponseEntity.status(400).build();
+        if(usuarioValidado){
+            String token = ""+ user.getEmail() +":" + user.getSenha();
+            token = Base64.getEncoder().encodeToString(token.getBytes());
+
+            Map<String, String> authenticateUserToken = new HashMap<>();
+            authenticateUserToken.put("token", token);
+            return ResponseEntity.status(200).body(authenticateUserToken);
         }
-
-        Map<String, String> authenticateUserToken = new HashMap<>();
-        authenticateUserToken.put("token", token);
-
-        return ResponseEntity.status(200).body(authenticateUserToken);
+            return ResponseEntity.status(400).build();
     }
 
 }

@@ -1,9 +1,12 @@
 import React from 'react'
-import PerfilOngEstruturaStyled from './style';
+import PerfilOngEstruturaStyled from './contaDoadorStyle';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import Gato from '../../assets/gato.webp'
 import SecaoSobre from './secaoSobre';
-import { Header } from '../Header/header';
+import { Header } from '../Headeer/header';
+import Campanha from '../Campanhas/campanha';
+
+import { Link } from 'react-router-dom';
 
 
 export const PerfilOngEstrutura = () => {
@@ -45,8 +48,8 @@ export const PerfilOngEstrutura = () => {
       </div>
 
       <div className='abasPerfilOng'>
-      <p>Sobre</p>
-      <p>Campanhas</p>
+      <p><Link to="/">sobre</Link></p>
+      <p><Link to="/PerfilOng">Campanhas</Link></p>
       <p>Publicacoes</p>
 
       </div>
@@ -63,7 +66,7 @@ export const PerfilOngEstrutura = () => {
 
 
 </PerfilOngEstruturaStyled>
-<SecaoSobre></SecaoSobre>
+
 
 
 
