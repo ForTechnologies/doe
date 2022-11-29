@@ -22,16 +22,16 @@ function ContaOng() {
 
 
 
-  for (let index = 0; index < 10; index++) {
-    listaCampanhas.push(index);
+  // for (let index = 0; index < 10; index++) {
+  //   listaCampanhas.push(index);
      
-   }
+  //  }
 
 
 
   useEffect(() => {
     api
-      .get()
+      .get("/campanhas/1")
       .then((res) => {
         setListaCampanhas(res.data.reverse());
       })
@@ -57,7 +57,7 @@ function ContaOng() {
 
   {listaCampanhas.map((campanha) => (
     <CampanhaEditOng
-      key={campanha.id}
+      key={campanha.idOng}
       titulo={campanha.titulo}
       descricao={campanha.descricao}
       capa={campanha.imagem}
