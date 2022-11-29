@@ -46,16 +46,6 @@ public class CsvController {
         campanhaListaObj.adiciona(campanha3);
 
 
-
-        for (int i = 0; i < campanhaListaObj.getTamanho(); i++) {
-            for (int i2 = i; i2 < campanhaListaObj.getTamanho(); i2++) {
-                Campanha aux = campanhaListaObj.getElemento(i);
-                if (campanhaListaObj.getElemento(i2).getOng().getId() < aux.getOng().getId()) {
-                    campanhaListaObj.alterarIndex(i, campanhaListaObj.getElemento(i2));
-                    campanhaListaObj.alterarIndex(i2, aux);
-                }
-            }
-        }
         csv.gravaArquivoCsv(campanhaListaObj, "relatorio");
         return ResponseEntity.status(200).body(campanhaListaObj);
     }
