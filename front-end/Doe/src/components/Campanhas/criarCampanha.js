@@ -16,52 +16,62 @@ import { AxiosHeaders } from 'axios';
 
 export const CriarCampanha = () => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
-    function cadastrar(event) {
+    // function cadastrar(event) {
+
+
+
       
-        event.preventDefault();
+      //   event.preventDefault();
     
-        const novaCampanha = {
-          titulo: event.target.nome.value,
-          descricao: event.target.descricao.value,
-          imagem: event.target.imagem.value
-        };
+      //   const novaCampanha = {
+      //     titulo: event.target.nome.value,
+      //     descricao: event.target.descricao.value,
+      //     imagem: event.target.imagem.value
+      //   };
+
+
     
-        api
-          .post(`/`, novaCampanha)
-          .then((resposta) => {
-            alert("Funcionou");
-            // navigate("/PerfiOng");
-            console.log(novaCampanha)
-          })
-          .catch((error) => {
-            alert("Deu erro");
-            console.log(novaCampanha)
-            // navigate("/PerfiOng");
-          });
-      }
+      //   api
+      //     .post(`/`, novaCampanha)
+      //     .then((resposta) => {
+      //       alert("Funcionou");
+      //       // navigate("/PerfiOng");
+      //       console.log(novaCampanha)
+      //     })
+      //     .catch((error) => {
+      //       alert("Deu erro");
+      //       console.log(novaCampanha)
+      //       // navigate("/PerfiOng");
+      //     });
+      // }
 
 
 
-    //   const {register, handleSubmit, formState: { erros } } = useForm();
+      const { register, handleSubmit, formState: { erros } } = useForm();
        
-    //   const adicionarCampanha = data => api.post("/criarCampanha", data)
-    //   .then(() => {
-    //       console.log("deu tudo certo")
-    //       console.log(data)
-
-    //       navigate("/");
-
-    //   } )
-    //   .catch(() => {
-    //     console.log("Deu tudo erado")
-    //     console.log(data)
-    //   })
 
 
-      
+    //  const addPost = data = console.log(data)
+
+
+     const addPost = data => api.post("/", data)
+      .then(() => {
+          console.log("deu tudo certo")
+          console.log(data)
+
+          // navigate("/");
+
+      } )
+      .catch(() => {
+        console.log("Deu tudo erado")
+        console.log(data)
+      })
+
+
+    
 
 
   return (
@@ -72,25 +82,24 @@ export const CriarCampanha = () => {
   <CriarCampanhaStyled>
   
   
-  
 
   <div className="adicionarCampanhas">
           <div className="formularioAdicionarCampanha">
             <h1>Adicionar campanha</h1>
             <br />
-            <form onSubmit={cadastrar}>
+            <form onSubmit={handleSubmit(addPost)}>
             <label>
                 {" "}
                Capa da campanha (url): <br />
-                <input name="imagem" type="text"/>
+                <input name="imagem" type="text" {...register("imagem")}/>
               </label>
               <label>
                 Titulo: <br />
-                <input name="titulo" type="text"/>
+                <input name="titulo" type="text" {...register("titulo")}/>
               </label>
               <label>
                 Descricao: <br />
-                <textarea name="descricao" type="text"/>
+                <textarea name="descricao" type="text" {...register("descricao")}/>
               </label>
               <button className="btn" type="submit">
                 Enviar
@@ -112,7 +121,7 @@ export const CriarCampanha = () => {
   
   </>
 
-  )
+  );
 }
 
 

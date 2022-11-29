@@ -37,12 +37,20 @@ function ContaOngEditarDados() {
     const [projetoFormalizadoInput, setProjetoFormalizado] = useState("Nao");
     const [razaoSocialInput, setRazaoSocial] = useState("ASSOCIACAO COMUNITARIA ONG ROBERSOM CLEMENTE MONTE");
 
-
-
-    
-
     //dados da entiedade
     const [editavelDadosDaEntiedade, setEditavelDadosDaEntiedade] = useState(false);
+
+
+    //bancp agencia conta
+    //dados de transferencia
+    const [bancoInput, setBanco] = useState("banco teste");
+    const [agenciaInput, setagencia] = useState("agencia");
+    const [contaBancoInput, setContaBanco] = useState("conta");
+
+    const [editavelTransferenciaBancaria, setEditavelTransferenciaBancaria] = useState(false);
+
+
+
 
 
 
@@ -192,24 +200,38 @@ function ContaOngEditarDados() {
                         <div className='divisaoConfig'>
                             <div className='tituloConfig'>
                                 <div>Transferencia bancaria</div>
-                                <div className='editarConfig'>Editar</div>
+                                <div className='editarConfig'
+                                 onClick={() => setEditavelTransferenciaBancaria(!editavelDadosDaEntiedade)}
+                                >Editar</div>
                             </div>
                             <div className='conteudoConfig'>
 
                                 <div className='dadosDaEntiedade'>
 
 
-                                    <p>Banco: Cora Sociedade de Crédito Direto S.A. - 403
+                                    <p>Banco: 
+                                    <input
+                                        className={editavelTransferenciaBancaria ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavelTransferenciaBancaria}
+                                        type="text"
+                                        defaultValue={bancoInput}
+                                        onChange={(e) => setBanco(e.target.value)} ></input>  
+
                                     </p>
                                     <p>Agência: 0001
+
                                     </p>
                                     <p>Conta Corrente: 1960273-2
+
                                     </p>
                                     <p>CNPJ: 36.410.601/0001-10
+
                                     </p>
                                     <p>Chave Pix: 36410601000110
+
                                     </p>
                                     <p>Beneficiário: ASSOCIACAO COMUNITARIA ONG ROBERSOM CLEMENTE MONTE
+
                                     </p>
 
 
