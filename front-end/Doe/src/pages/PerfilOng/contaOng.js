@@ -8,14 +8,13 @@ import api from "../../api";
 
 
 import Header from '../../components/Headeer/header';
-import CampanhaEditOng from '../../components/Campanhas/itemCampanhaEditOng';
 
 
 import React, { useState, useEffect } from 'react';
 import { set } from 'react-hook-form';
 
 
-function ContaOng() {
+function ContaOng(props) {
 
   //armazenar os dados dentro de um state com array com todos o sregistros da api
   
@@ -29,6 +28,10 @@ function ContaOng() {
   // const [imagemInput, setImagemInput] = useState(props.urlImagem);
 
   // const [editavel, setEditavel] = useState(false);
+
+  const estilo = {
+    backgroundImage: `${props.urlImagem})`
+  };
 
 
   const [posts, setPosts] = useState([])
@@ -48,7 +51,7 @@ function ContaOng() {
         console.log(res)
         setPosts(res.data.reverse());
         //salvar lista
-        localStorage.setItem('campanhas', JSON.stringify(posts))
+        localStorage.setItem('campanhas', JSON.stringify(res.data))
 
       })
       .catch((erro) => {
@@ -58,8 +61,8 @@ function ContaOng() {
 
 
   function deletePost(id) {
-    api.delete(`/campanhas//AtualizarCampanha/${id}`)
-    set(posts.filter(posts => posts._id !== id))
+    api.delete(`/campanhas/atualizarCampanha/${id}`)
+    set(posts.filter(posts => posts.id !== id))
     console.log(id)
   }
    
@@ -70,9 +73,6 @@ function ContaOng() {
         setPosts(JSON.parse(localStorage.getItem('campanhas')))
     }
   })
-
-
-     
 
 
   return (
@@ -103,15 +103,14 @@ function ContaOng() {
         <div className='cardCampanha divEspacoCardCampanha' key={index}>
 
           <div className='divCapaCampanha'>
-            <img src={posts.urlImagem}></img>
+            <img src={posts.urlImagem} style={estilo}></img>
           </div>
 
-
+ 
           <div className='divInformacoesCampanha'>
             <div className='tituloCardCampanha'>
               <input
                 disabled= "true"
-                type="text"
                 defaultValue={posts.titulo}
               ></input>
             </div>
@@ -131,14 +130,14 @@ function ContaOng() {
 
 
             <div className='divBotaoCardCampanha'>
-            <Link to= {{ pathname: `/AtualizarCampanha/${posts._id}`}} >
+            <Link to= {{ pathname: `/atualizarCampanha/${posts.id}`}} >
             <button
              className='botaoCardCampanha botaoAtualizarCampanha'>Atualizar</button>
             </Link>
               
               <button 
               className='botaoCardCampanha botaoExcluirCampanha'
-               onClick={() => deletePost(posts._id)}
+               onClick={() => deletePost(posts.id)}
               >
                 Excluir</button>
 

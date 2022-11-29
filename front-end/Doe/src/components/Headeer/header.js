@@ -38,41 +38,36 @@ export const Header = () => {
         <div className='navBarVertical'>
           <div className='fotoComunidadeNavBarVertical'>
             <img src={Gato}></img>
-            
-            </div>
-            <div className='divTextFotoPerfil'>
+
+          </div>
+          <div className='divTextFotoPerfil'>
             <a>Perfil</a>
-            </div>
-          
-          <div className='divListaPaginas'>  
-          <ul>
-            
+          </div>
+
+          <div className='divListaPaginas'>
+            <ul>
+
               <div className='Text'>
-              <li>
-                <Link to="/procurarComunidades"> <a>Comunidades</a></Link>
-              
-            </li>
-            </div>
 
-
-            <li> <Link to="/procurarCampanhas">
-            <a>Campanhas</a>
-            </Link> </li>
-              
-
-
-
-            <li><a href="#contact">LocalizarOngs</a></li>
-          </ul>
+                <Link to="/procurarComunidades">
+                  <li> <a>Comunidades</a></li>
+                </Link>
+              </div>
+              <Link to="/procurarCampanhas">
+                <li>
+                  <a>Campanhas</a>
+                </li>
+              </Link>
+              <Link to="/LocalizarOngs"> 
+              <li><a>LocalizarOngs</a></li>
+              </Link>
+            </ul>
           </div>
 
 
           <div className='divBotaoNavBar'>
-
-           <button className='buttonNavBar'> Sair</button>
-
+            <button className='buttonNavBar'> Sair</button>
           </div>
-
         </div>
 
 

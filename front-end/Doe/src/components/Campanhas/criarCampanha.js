@@ -106,9 +106,6 @@ export const CriarCampanha = () => {
               </button>
             </form>
           </div>
-          <div className="img-lateral">
-            <img src='' alt="" />
-          </div>
         </div>
   
   

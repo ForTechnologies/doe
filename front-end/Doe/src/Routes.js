@@ -70,7 +70,7 @@ export default () => {
      </Route>
 
 
-     <Route exact path="/AtualizarCampanha/:id" element={<ContaAtualizarCampanha />}></Route>
+     <Route exact path="/atualizarCampanha/:id" element={<ContaAtualizarCampanha />}></Route>
 
 
     </Routes>

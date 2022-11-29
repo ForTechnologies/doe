@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 
 
-export const HeaderStyle = styled.div `
+export const HeaderStyle = styled.div`
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
   
@@ -159,11 +159,11 @@ export const HeaderStyle = styled.div `
     }
 
     .divListaPaginas a {
-      width: 90%;
+      width: 100%;
       height: auto;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid grey;
+      border-bottom: 0.1rem solid grey;
 
     }
 
@@ -207,7 +207,7 @@ export const HeaderStyle = styled.div `
 `
 
 // const Header = (props) => {
-   
+
 
 //     return (
 
