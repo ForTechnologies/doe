@@ -2,9 +2,9 @@ import React from 'react'
 import ContaOngEstruturaStyled from './contaOngStyled';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import Gato from '../../assets/gato.webp'
-import SecaoSobre from './secaoSobre';
-import { Header } from '../Headeer/header';
-import Campanha from '../Campanhas/campanha';
+// import SecaoSobre from './secaoSobre';
+// import { Header } from '../Headeer/header';
+// import Campanha from '../Campanhas/campanha';
 import { Link } from 'react-router-dom';
 import PerfilOngEstruturaStyled from './contaDoadorStyle';
 import IconeConfiguracao from './../../assets/settings.png';

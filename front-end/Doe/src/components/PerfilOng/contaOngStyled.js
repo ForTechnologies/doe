@@ -117,7 +117,7 @@ export const contaOngEstruturaStyled = styled.div `
 }
 
 .iconeConfig {
-    width: 60%;
+    width: 100%;
     height: 40%;
     cursor: pointer;
 }
@@ -189,7 +189,6 @@ export const contaOngEstruturaStyled = styled.div `
     justify-content: flex-start;
     display: flex;  
     align-items: center;
-    background-color: green;
     padding-left: 20px;
     border-radius: 0px 0px 20px 20px;
     cursor: pointer;
@@ -204,7 +203,6 @@ height: 100%;
 justify-content: flex-start;
 display: flex;  
 align-items: flex-end;
-background-color: green;
 font-weight: 200;
 text-transform: uppercase;
 font-size: 18px;
