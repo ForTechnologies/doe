@@ -58,8 +58,8 @@ function ContaOng() {
 
 
   function deletePost(id) {
-    api.delete(`/campanhas//AtualizarCampanha/${id}`)
-    set(posts.filter(posts => posts._id !== id))
+    api.delete(`/campanhas/${id}`)
+    set(posts.filter(post => post._id !== id))
     console.log(id)
   }
    
@@ -131,14 +131,14 @@ function ContaOng() {
 
 
             <div className='divBotaoCardCampanha'>
-            <Link to= {{ pathname: `/AtualizarCampanha/${posts._id}`}} >
+            <Link to= {{ pathname: `/AtualizarCampanha/${post._id}`}} >
             <button
              className='botaoCardCampanha botaoAtualizarCampanha'>Atualizar</button>
             </Link>
               
               <button 
               className='botaoCardCampanha botaoExcluirCampanha'
-               onClick={() => deletePost(posts._id)}
+               onClick={() => deletePost(post._id)}
               >
                 Excluir</button>
 

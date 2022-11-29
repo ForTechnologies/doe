@@ -69,7 +69,7 @@ export const ContaAtualizarCampanha = () => {
       }, [])
 
 
-      const addPost = data => api.put(`/campanhas//AtualizarCampanha/${id}`, data)
+      const addPost = data => api.put(`/campanhas/${id}`, data)
       .then(() => {
           console.log("deu tudo certo")
           console.log(data)
