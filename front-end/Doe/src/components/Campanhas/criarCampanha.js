@@ -57,7 +57,7 @@ export const CriarCampanha = () => {
     //  const addPost = data = console.log(data)
 
 
-     const addPost = data => api.post("/", data)
+     const addPost = data => api.post(`/campanhas`, data)
       .then(() => {
           console.log("deu tudo certo")
           console.log(data)

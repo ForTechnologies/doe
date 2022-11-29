@@ -13,8 +13,6 @@ const api = axios.create({
         client_id: process.env.CLIENT_ID,
 
     },
-
-    baseURL: process.env.API_URL,
 });
 
 
