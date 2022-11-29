@@ -61,8 +61,13 @@ function ContaOng(props) {
 
 
   function deletePost(id) {
+<<<<<<< HEAD
     api.delete(`/campanhas/atualizarCampanha/${id}`)
     set(posts.filter(posts => posts.id !== id))
+=======
+    api.delete(`/campanhas/${id}`)
+    set(posts.filter(post => post._id !== id))
+>>>>>>> 3e2fd4475f8ebb881949de8f52ff066b9d9666f3
     console.log(id)
   }
    
@@ -130,14 +135,22 @@ function ContaOng(props) {
 
 
             <div className='divBotaoCardCampanha'>
+<<<<<<< HEAD
             <Link to= {{ pathname: `/atualizarCampanha/${posts.id}`}} >
+=======
+            <Link to= {{ pathname: `/AtualizarCampanha/${post._id}`}} >
+>>>>>>> 3e2fd4475f8ebb881949de8f52ff066b9d9666f3
             <button
              className='botaoCardCampanha botaoAtualizarCampanha'>Atualizar</button>
             </Link>
               
               <button 
               className='botaoCardCampanha botaoExcluirCampanha'
+<<<<<<< HEAD
                onClick={() => deletePost(posts.id)}
+=======
+               onClick={() => deletePost(post._id)}
+>>>>>>> 3e2fd4475f8ebb881949de8f52ff066b9d9666f3
               >
                 Excluir</button>
 
