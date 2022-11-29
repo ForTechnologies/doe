@@ -3,63 +3,110 @@ package br.com.doe.core.services;
 import br.com.doe.core.dtos.CampanhaDto;
 import br.com.doe.core.entities.Campanha;
 import br.com.doe.core.entities.Ong;
+import br.com.doe.utils.ListaObj;
 
 
 import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 
 public class TxtService {
 
+
+
+
     public TxtService(){}
-    public static void gravaRegistro(String registro, String nomeArq) {
+    public static void gravaTxt(List<Campanha> lista, String nomeArq) {
+        FileWriter arq = null;
+        Formatter saida = null;
+        Boolean deuRuim = false;
+
+        try{
+            arq = new FileWriter(nomeArq, true);
+            saida = new Formatter(arq);
+
+        } catch (IOException err){
+            System.out.println("Error ao abrir o arquivo!");
+            System.exit(1);
+        }
+
+
+       try{
+           String header = "";
+           String corpo = "";
+           String trailer = "";
+
+           int contaRegDados = 0;
+
+           // iniciando header
+           header += "00DOE!";
+           header = header + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+           header = header + "01";
+
+           gravaRegistro(nomeArq, header);
+
+
+           for (int i = 0; i < lista.size() ; i++) {
+               Campanha campanha = lista.get(i);
+               corpo += "02";
+               corpo += String.format("%03d", campanha.getId());
+               corpo += String.format("%-40s", campanha.getTitulo());
+               corpo += String.format("%-50s", campanha.getDescricao());
+               corpo += String.format("%-10s", campanha.getDataInicio());
+               corpo += String.format("%-10s", campanha.getDataFim());
+               contaRegDados++;
+               gravaRegistro(nomeArq, corpo);
+
+           }
+
+           trailer += "01";
+           trailer += String.format("%010d", contaRegDados);
+           gravaRegistro(nomeArq, trailer );
+
+
+
+       } catch (FormatterClosedException err){
+           System.out.println("errou ao gravar o arquivo!");
+           deuRuim = true;
+       } finally {
+           saida.close();
+           try {
+            arq.close();
+            } catch (IOException err){
+               System.out.println("Erro ao fechar o arquivo!");
+               deuRuim = true;
+           }
+           if (deuRuim){
+               System.exit(1);
+           }
+       }
+
+
+    }
+
+    public static void gravaRegistro (String nomeArq, String registro) {
         BufferedWriter saida = null;
-
         try {
+            // o argumento true é para indicar que o arquivo não será sobrescrito e sim
+            // gravado com append (no final do arquivo)
             saida = new BufferedWriter(new FileWriter(nomeArq, true));
-        } catch (IOException var5) {
-            System.out.println("Erro ao abrir o arquivo");
-            var5.printStackTrace();
+        } catch (IOException e) {
+            System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
         }
 
         try {
-            assert saida != null;
-            saida.append(registro).append("\n");
+            saida.append(registro);
+            saida.newLine();
             saida.close();
-        } catch (IOException var4) {
-            System.out.println("Erro ao gravar o arquivo");
-            var4.printStackTrace();
-        }
 
+        } catch (IOException e) {
+            System.err.printf("Erro ao gravar arquivo: %s.\n", e.getMessage());
+        }
     }
 
-        public static void gravaArquivoTxt(List<Campanha> lista, String nomeArq) {
-        int contaRegDados = 0;
-        String header = "00DOE!20222";
-        header = header + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
-        header = header + "01";
-        gravaRegistro(header, nomeArq);
-
-        for(Iterator var5 = lista.iterator(); var5.hasNext(); ++contaRegDados) {
-            Campanha c = (Campanha)var5.next();
-            String corpo = "02";
-            corpo = corpo + String.format("%-5.5s", c.getTitulo());
-            corpo = corpo + String.format("%-8.8s", c.getDescricao());
-            corpo = corpo + String.format("%-50.50s", c.getDataInicio());
-            corpo = corpo + String.format("%-40.40s", c.getDataFim());
-            corpo = corpo + String.format("%05.2f", c.getUrlImagem());
-            gravaRegistro(corpo, nomeArq);
-        }
-
-        String trailer = "01";
-        trailer = trailer + String.format("%010d", contaRegDados);
-        gravaRegistro(trailer, nomeArq);
-    }
 
     public static void leArquivoTxt(String nomeArq) {
         BufferedReader entrada = null;
@@ -78,10 +125,9 @@ public class TxtService {
                 String tipoRegistro = registro.substring(0, 2);
                 if (tipoRegistro.equals("00")) {
                     System.out.println("Registro de header");
-                    System.out.println("Tipo de arquivo: " + registro.substring(2, 6));
-                    System.out.println("Ano e semestre: " + registro.substring(6, 11));
-                    System.out.println("Data e hora da gravação: " + registro.substring(11, 30));
-                    System.out.println("Versão do documento: " + registro.substring(30, 32));
+                    System.out.println("Tipo de arquivo: " + registro.substring(3, 7));
+                    System.out.println("Data e hora da gravação: " + registro.substring(8, 27));
+                    System.out.println("Versão do documento: " + registro.substring(28, 30));
                 } else if (tipoRegistro.equals("01")) {
                     System.out.println("Registro de trailer");
                     int qtdRegDadoGravado = Integer.parseInt(registro.substring(2, 12));
@@ -94,11 +140,11 @@ public class TxtService {
                     }
                 } else if (tipoRegistro.equals("02")) {
                     System.out.println("Registro de corpo");
-                    String titulo = registro.substring(2, 7).trim();
-                    String Descricao = registro.substring(7, 15).trim();
-                    String DataInicio = registro.substring(15, 65).trim();
-                    String DataFim = registro.substring(65, 105).trim();
-                    String UrlImagem = registro.substring(105, 110).trim();
+                    String titulo = registro.substring(1, 2).trim();
+                    String Descricao = registro.substring(3, 6).trim();
+                    String DataInicio = registro.substring(7, 46).trim();
+                    String DataFim = registro.substring(47, 96).trim();
+                    String UrlImagem = registro.substring(97, 118).trim();
                     ++contaRegDadoLido;
                     Campanha c = new Campanha();
                     listaLida.add(c);
@@ -123,4 +169,27 @@ public class TxtService {
 
     }
 
+    public static void main(String[] args) {
+
+        List<Campanha> campanhaListaObj = new ArrayList<>();
+
+        Campanha campanha;
+        Ong ong = new Ong();
+
+        Campanha campanha1 = new Campanha("Campanha Legal", LocalDate.now(),LocalDate.now(),"Descrição Legal","legal.com", ong);
+        Campanha campanha2 = new Campanha("Campanha Daora",LocalDate.now(),LocalDate.now(),"Descrição Daora","daora.com", ong);
+        Campanha campanha3 = new Campanha("Campanha Massa",LocalDate.now(),LocalDate.now(),"Descrição Massa","massa.com", ong);
+
+
+        campanhaListaObj.add(campanha1);
+        campanhaListaObj.add(campanha2);
+        campanhaListaObj.add(campanha3);
+
+
+
+        gravaTxt(campanhaListaObj, "relatorio.txt");
+    }
+
 }
+
+

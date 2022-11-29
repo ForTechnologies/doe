@@ -1,16 +1,15 @@
 package br.com.doe.core.services;
 
 import br.com.doe.core.entities.Campanha;
+import br.com.doe.core.entities.Ong;
 import br.com.doe.utils.ListaObj;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Formatter;
-import java.util.FormatterClosedException;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 public class CsvService {
 
@@ -25,7 +24,7 @@ public class CsvService {
 //            arq = new FileWriter(nomeArq);
             // Se quiser que o conteúdo seja acrescentado ao final do arquivo,
             // teria que fazer:
-            arq = new FileWriter(nomeArq, false);
+            arq = new FileWriter(nomeArq, true);
             saida = new Formatter(arq);
         } catch (IOException erro) {
             System.out.println("Erro ao abrir o arquivo");
@@ -38,7 +37,7 @@ public class CsvService {
             for (int i = 0; i < campanhaListaObj.getTamanho(); i++) {
                 Campanha campanha = campanhaListaObj.getElemento(i);
                 //               // gravo os dados desse objeto, separando cada campo por um ;
-                saida.format("%s;%s;%s;%s;%s;%s;%s\n", campanha.getId(), campanha.getOng(),campanha.getTitulo(),campanha.getDescricao(),campanha.getDataInicio(),campanha.getDataFim(),campanha.getUrlImagem());
+                saida.format("%d;%s;%s;%s;%s%n", campanha.getId() ,campanha.getTitulo(),campanha.getDescricao(),campanha.getDataInicio(),campanha.getDataFim());
             }
 
         } catch (FormatterClosedException erro) {
@@ -58,7 +57,7 @@ public class CsvService {
         }
     }
 
-    public String leExibeArquivoCsv(String nomeArq) {
+    public  String leExibeArquivoCsv(String nomeArq) {
         FileReader arq = null;  // objeto que representa o arquivo para leitura
         Scanner entrada = null; // objeto usado para ler do arquivo
         nomeArq += ".csv";      // acrescenta extensão .csv ao nome do arquivo
@@ -68,7 +67,7 @@ public class CsvService {
         // try catch para abrir o arquivo
         try {
             arq = new FileReader(nomeArq);
-            entrada = new Scanner(arq).useDelimiter(";|\\n");
+            entrada = new Scanner(arq).useDelimiter(";|\\r\\n");
         } catch (FileNotFoundException erro) {
             System.out.println("Arquivo não encontrado");
             System.exit(1);
@@ -77,24 +76,24 @@ public class CsvService {
         // Bloco try catch para ler o arquivo
         try {
             // Exibe os títulos das colunas
-            relatorio += String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", "id", "ong","titulo", "descricao", "dataInicio", "dataFim", "urlImagem");
+            relatorio += String.format("%s;%s;%s;%s;%s%n", "id","titulo", "descricao", "dataInicio", "dataFim");
             while (entrada.hasNext()) {   // enqto não chegou o final do arquivo
                 String id = entrada.next();   // next() aqui lê até o próximo ;
-                String ong = entrada.next();
                 String titulo = entrada.next();
                 String descricao = entrada.next();
                 String dataInicio = entrada.next();
                 String dataFim = entrada.next();   // next() aqui lê até o próximo ;
-                String urlImagem = entrada.next();
-                relatorio += String.format("%s;%s;%s;%s;%s;%s;%s\n", id, ong, titulo, descricao, dataInicio, dataFim,
-                        urlImagem);
+                relatorio += String.format("%s;%s;%s;%s;%s\n", id, titulo, descricao, dataInicio, dataFim
+                        );
             }
         } catch (NoSuchElementException erro) {
             System.out.println("Arquivo com problemas");
             deuRuim = true;
+
         } catch (IllegalStateException erro) {
             System.out.println("Erro na leitura do arquivo");
             deuRuim = true;
+
         } finally {
             entrada.close();
             try {
@@ -107,7 +106,12 @@ public class CsvService {
                 System.exit(1);
             }
         }
+
+        System.out.println(relatorio);
         return relatorio;
+
     }
+
+
 
 }

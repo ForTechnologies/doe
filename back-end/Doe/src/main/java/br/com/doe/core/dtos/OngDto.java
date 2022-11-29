@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 @Getter @Setter
 public class OngDto {
+    private Integer id;
     @Size(max=14)
     private String cnpj;
 

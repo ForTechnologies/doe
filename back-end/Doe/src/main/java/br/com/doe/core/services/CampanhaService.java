@@ -20,6 +20,8 @@ public class CampanhaService {
     private CampanhaMapper mapper;
 
     public void criar(CampanhaDto dto) {
+        //gambiarra
+        dto.setIdOng(1);
         var campanha = mapper.dtoToEntity(dto);
         repositorio.save(campanha);
     }
