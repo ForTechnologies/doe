@@ -1,0 +1,70 @@
+.fundo {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    z-index: -20;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14rem;
+}
+
+.direitos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14rem;
+}
+
+.atendimento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titleFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icones img {
+    width: 3rem;
+    cursor: pointer;
+}
+
+.icones {
+    display: flex;
+    gap: 2rem;
+}
+
+.titleFo {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 28px;
+}
+
+.infoFo {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.autorais {
+    margin-bottom: -8rem;
+    margin-top: 9rem;
+}
+
+.textAuto {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}

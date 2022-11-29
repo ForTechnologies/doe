@@ -1,0 +1,109 @@
+.headerContainer {
+    width: 100%;
+    height: 4rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.list{
+    width: 63px;
+height: 35px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 146.69%;
+/* or 35px */
+
+display: flex;
+align-items: center;
+
+color: rgba(54, 52, 52, 0.92);
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+}
+
+.headerHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.headerHome img {
+    width: 7rem;
+    cursor: pointer;
+}
+
+.headerHome .menuHome {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.headerHome .menuHome a.active {
+    border-bottom: 2px solid #FFA501;
+}
+
+.headerHome .menuHome a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.buttonsHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.buttonsHome .entrar {
+    background: #FFA501;
+    border: 1px solid #FFA501;
+    color: white;
+    width: 9rem;
+    height: 2rem;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+
+.buttonsHome .entrar:hover {
+    background: #FF5555;
+    color: #fff;
+}
+
+.buttonsHome .criar {
+    border: none;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    width: 9rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.73);
+    color: #fff;
+    transition: 300ms all ease;
+    cursor: pointer;
+}
+
+.buttonsHome .criar:hover {
+    background: #FFA501;
+    color: #000;
+}

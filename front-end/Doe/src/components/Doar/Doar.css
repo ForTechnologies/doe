@@ -1,0 +1,110 @@
+.doar {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doeDoar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doeH1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+}
+
+.esclamacao {
+    color: #FFA501;
+}
+
+.plataforma {
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.cards {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.card {
+    background: #fff;
+    width: 19rem;
+    height: 22rem;
+    padding: 1rem;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.394);
+    border-radius: 15px;
+}
+
+.subCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.subCard img {
+    width: 5rem;
+}
+
+.titleCard {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.infoCard {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+.buttonDoar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 3rem;
+    background: #FFA501;
+    gap: 1rem;
+    font-size: 17px;
+    border-radius: 10px;
+    transition: 300ms all ease;
+    cursor: pointer;
+    position: absolute;
+}
+
+.cadDoar {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+}
+
+.buttonDoar img {
+    width: 2rem;
+}
+
+.setas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+}
+
+.setaCima {
+    width: 4rem;
+    margin-left: 64rem;
+    cursor: pointer;
+}

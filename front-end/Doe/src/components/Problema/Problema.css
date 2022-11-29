@@ -1,0 +1,99 @@
+.problema {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.situacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.aumentam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.doacoes {
+    margin-top: 4rem;
+}
+
+.aumentam img {
+    width: 22rem;
+}
+
+.infoProblema {
+    display: flex;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.subTexto {
+    font-family: 'Inter', sans-serif;
+}
+
+.doeProblema {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #FF5555;
+    font-weight: 300;
+}
+
+.seja {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+}
+
+.preto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem;
+}
+
+.sabia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voceInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.voce {
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+}
+
+.existem {
+    color: #fff;
+    font-size: 35px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 9rem;
+    font-weight: 300;
+}
+
+.subTexto {
+    font-weight: 700;
+}
+
+.preto img {
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    z-index: -20;
+}

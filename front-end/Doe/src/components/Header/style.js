@@ -4,24 +4,36 @@ import styled from 'styled-components';
 
 
 
-export const HeaderStyle = styled.div `
+export const HeaderStyle = styled.div`
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
   
      
-     
+
+    .palavrasHeader{
+      position: absolute;
+      width: 86px;
+      height: 0px;
+      left: 339px;
+      top: 65px;
+      border: 3px solid #FFA501;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
 
 
      .containerHeader {
       flex-direction: column;
      height: 12vh;
      width: 100%;
-     position: fixed;
+     position: absolute;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
      background-color: #FFFFFF;
      box-shadow: 0px 0px 4px black;
      z-index: 200;
+     left: 0px;
+     top: 0px;
+  }
 
      }
 
@@ -203,7 +215,7 @@ export const HeaderStyle = styled.div `
 `
 
 // const Header = (props) => {
-   
+
 
 //     return (
 

@@ -1,0 +1,94 @@
+.objetivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rem;
+}
+
+.ong {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doador {
+    font-family: 'Inter', sans-serif;
+    font-size: 48px;
+    border-bottom: 3px solid #FF7562;
+}
+
+.nosso {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.boxes {
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.boxesSub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.box, .box5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFA501;
+    width: 25rem;
+    height: 10rem;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.box2, .box3, .box6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 10rem;
+    background: #D9D9D91A;
+    border-radius: 15px;
+    
+}
+
+.box4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF5555;
+    width: 25rem;
+    height: 10rem;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.boxSub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.geo {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+}
+
+.analizar {
+    font-family: 'Inter', sans-serif;
+    margin-top: 0.5rem;
+}
