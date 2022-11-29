@@ -2,6 +2,8 @@ import React from 'react'
 import ContaOngEstruturaStyled from './contaOngStyled';
 import fotoContainerOng from '../../assets/img-cadastroOng/fotoContainerOng.png'
 import Gato from '../../assets/gato.webp'
+import PerfilOng from '../../assets/capaOng.webp'
+import FotoCapaOng from '../../assets/fotoCapaOng.webp'
 // import SecaoSobre from './secaoSobre';
 // import { Header } from '../Headeer/header';
 // import Campanha from '../Campanhas/campanha';
@@ -29,13 +31,13 @@ function ContaOngEstrutura() {
  <div className='cardBuscarComunidade'>
 
     <div className='divCapaComunidade'>
-      <img src={Gato}></img>
+      <img src={FotoCapaOng}></img>
 
     </div>
 
     <div className='fotoComunidade'>
 
-    <img src={Gato}></img>
+    <img src={PerfilOng}></img>
     </div>
 
     <div className='divInformacoesComunidade'>
@@ -44,7 +46,7 @@ function ContaOngEstrutura() {
      
       <div className='divDescricaoCardComunidade'>
         <div className='textoDescricaoCard'>
-      <p> Campanha destinado a arrecadação de agasalhos da ,ampanha destinado a arrecadação de agasalhos da ong @juntosNoInverno.  Nossa campanha tem como meta agasalhar mais de 100 moradores de rua localizados......Campanha destinado a arrecadação de agasalhos da ong @juntosNoInverno.  Nossa campanha tem como meta agasalhar mais de 100 moradores......</p>
+      <p> Nos destinado a arrecadação de agasalhos da ong @juntosNoInverno.  Nossa campanha tem como meta agasalhar mais de 100 moradores de rua localizados no estado de sao paulo...</p>
       </div>
       <div className='divIconeConfiguracoes'>
 
@@ -56,7 +58,7 @@ function ContaOngEstrutura() {
 
       <div className='divBotaoCardComunidade'>
        
-      <button className='botaoCardComunidade'>Entrar</button>
+      {/* <button className='botaoCardComunidade'>Entrar</button> */}
              
       </div>
 

@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+
 import CardCampanhasStyled from '../../components/Campanhas/style'
 
 
@@ -36,10 +37,10 @@ function ContaOng(props) {
 
   const [posts, setPosts] = useState([])
 
-  for (let index = 0; index < 5; index++) {
-    posts.push(index);
+  // for (let index = 0; index < 5; index++) {
+  //   posts.push(index);
 
-  }
+  // }
 
 
 

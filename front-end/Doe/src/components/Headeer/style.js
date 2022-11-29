@@ -25,19 +25,13 @@ export const HeaderStyle = styled.div`
      flex-direction: column;
      height: 12vh;
      width: 100%;
-     position: absolute;
+     position: fixed;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
      background-color: #FFFFFF;
      box-shadow: 0px 0px 4px black;
      z-index: 200;
-<<<<<<< HEAD:front-end/Doe/src/components/Header/style.js
-     left: 0px;
-     top: 0px;
-  }
-=======
     
->>>>>>> 68d1eeed62bae7ed8c19956a54dfa0b8cdd6cfcc:front-end/Doe/src/components/Headeer/style.js
 
      }
 
@@ -109,7 +103,7 @@ export const HeaderStyle = styled.div`
 
     .navBarVertical {
     overflow: auto;
-    position: fixed;
+    position: fixed !important;
     width: 18%;
     height: 100vh;
     background-color: #FFFFFF;
@@ -119,6 +113,7 @@ export const HeaderStyle = styled.div`
     align-items: center;
     content: max;
     overflow: hidden;
+
 
 }
 

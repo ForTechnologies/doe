@@ -106,6 +106,7 @@ const Login = () => {
 
 
             <InputPadrao>
+            <label>Email *:</label>
               <input
                 type="text"
                 text="email"
@@ -120,7 +121,7 @@ const Login = () => {
             
 
 
-              <label>Senha *</label>
+              <label>Senha *:</label>
               <input
                 className='inputSenhaLogin'
                 type='password'
@@ -137,10 +138,12 @@ const Login = () => {
 
             </InputPadrao>
 
-            <div className='btnLogin'>
-              <BtnPadrao>
+            <div className='btnLogin'> <Link to="/PerfilOng">
+            <BtnPadrao>
                 ENTRAR
               </BtnPadrao>
+            </Link>
+              
               <p>Nao tem uma conta?
                 <Link to="/CadastroDoador"><span>Cadastre-se</span></Link></p>
                 {exibeAlerta ? <Alerta /> : <></>}

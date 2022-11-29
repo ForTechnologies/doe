@@ -3,7 +3,7 @@ import HeaderStyle from './style'
 import FotoLogo from '../../assets/logoTipoDoe.png'
 import ProcurarIcone from '../../assets/procurarIcone.png'
 import NotificacaoIcone from '../../assets/notificacaoIcone.png'
-import Gato from '../../assets/gato.webp'
+import fotoPerfilOng from '../../assets/capaOng.webp'
 import { Link } from 'react-router-dom';
 
 
@@ -37,11 +37,14 @@ export const Header = () => {
 
         <div className='navBarVertical'>
           <div className='fotoComunidadeNavBarVertical'>
-            <img src={Gato}></img>
+            <img src={fotoPerfilOng}></img>
 
           </div>
-          <div className='divTextFotoPerfil'>
-            <a>Perfil</a>
+          <div className='divTextFotoPerfil'> 
+          <Link to="/PerfilOng">
+          <a>Perfil</a>
+          </Link>
+           
           </div>
 
           <div className='divListaPaginas'>
@@ -58,15 +61,18 @@ export const Header = () => {
                   <a>Campanhas</a>
                 </li>
               </Link>
-              <Link to="/LocalizarOngs"> 
+              <Link to="/geolocalizacao"> 
               <li><a>LocalizarOngs</a></li>
               </Link>
             </ul>
           </div>
 
 
-          <div className='divBotaoNavBar'>
-            <button className='buttonNavBar'> Sair</button>
+          <div className='divBotaoNavBar'> <Link to="/Login">
+
+          <button className='buttonNavBar'> Sair</button>
+          </Link>
+           
           </div>
         </div>
 

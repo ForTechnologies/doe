@@ -157,6 +157,29 @@ margin-bottom: 40px;
 .inputAtualizarCapa input{
    width: 90%;
 }
+
+
+
+
+
+
+.cardTelasCampanha  {
+    width: 300px;
+    height: 500px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.containerPaginaCampanha{
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh auto;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    
+}
+
     
     
     `
