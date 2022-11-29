@@ -57,7 +57,7 @@ function ContaOng() {
 
   {listaCampanhas.map((campanha) => (
     <CampanhaEditOng
-      key={campanha.id}
+      key={campanha.idOng}
       titulo={campanha.titulo}
       descricao={campanha.descricao}
       capa={campanha.imagem}
