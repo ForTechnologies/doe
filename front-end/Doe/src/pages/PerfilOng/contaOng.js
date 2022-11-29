@@ -22,16 +22,16 @@ function ContaOng() {
 
 
 
-  for (let index = 0; index < 10; index++) {
-    listaCampanhas.push(index);
+  // for (let index = 0; index < 10; index++) {
+  //   listaCampanhas.push(index);
      
-   }
+  //  }
 
 
 
   useEffect(() => {
     api
-      .get()
+      .get("/campanhas/1")
       .then((res) => {
         setListaCampanhas(res.data.reverse());
       })
