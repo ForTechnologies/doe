@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.logout.HttpStatusReturnin
 public class WebConfigSecurity {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws  Exception{
-        http.csrf().disable()
+        http.httpBasic().and().csrf().disable()
                 .authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST, "/usuarios").permitAll()
                 .antMatchers("/login").permitAll()
