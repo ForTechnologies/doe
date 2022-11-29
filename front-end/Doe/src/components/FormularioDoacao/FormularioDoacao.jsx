@@ -4,29 +4,29 @@ import '../FormularioDoacao/FormularioDoacao.css'
 export const FormularioDoacao = () => {
     return (
         <div>
-            <h1>QUERO DOAR UM BEM MATERIAL</h1>
+            <h1 className='texto'>QUERO DOAR UM BEM MATERIAL</h1>
             <div>
                 <div>
-                    <h2>DADOS DA DOAÇÃO</h2>
+                    <h2 className='subtexto'>DADOS DA DOAÇÃO</h2>
                 </div>
                 <div>
-                    <span>O que será doado? </span>
-                    <input type="text" placeholder='Escreva em detalhes' />
+                    <span className='msg'>O que será doado? </span>
+                    <input className='inpt' type="text" placeholder='  Escreva em detalhes' />
                 </div>
                 <div>
-                    <span>Retirar no Local? </span>
-                    <input type="text" placeholder='Sim' />
+                    <span className='msg2'>Retirar no Local? </span>
+                    <input className='inpt2' type="text" placeholder='  Sim' />
                 </div>
                 <div>
-                    <span>Endereço completo </span>
-                    <input type="text" placeholder='Digite seu endereço' />
+                    <span className='msg3'>Endereço completo </span>
+                    <input className='inpt3' type="text" placeholder='  Digite seu endereço' />
                 </div>
                 <div>
-                    <span>Ponto de referência: </span>
-                    <input type="text" placeholder='Digite seu ponto de referencia' />
+                    <span className='msg4'>Ponto de referência: </span>
+                    <input className='inpt4' type="text" placeholder='  Digite seu ponto de referencia' />
                 </div>
 
-                <button>Enviar</button>
+                <button className='botao'>Enviar</button>
             </div>
         </div>
     )

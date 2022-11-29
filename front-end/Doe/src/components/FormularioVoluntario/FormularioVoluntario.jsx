@@ -4,33 +4,33 @@ import '../FormularioVoluntario/FormularioVoluntario.css'
 export const FormularioVoluntario= () => {
     return (
         <div>
-            <h1>QUERO ME VOLUNTARIAR</h1>
+            <h1 className='titulo'>QUERO ME VOLUNTARIAR</h1>
             <div>
                 <div>
-                    <h2>DADOS DO TRABALHO VOLUNTARIO</h2>
+                    <h2 className='subtitulo'>DADOS DO TRABALHO VOLUNTARIO</h2>
                 </div>
                 <div>
-                    <span>Data de nascimento</span>
-                    <input type="text" placeholder='dd/mm/aaaa' />
+                    <span className='message'>Data de nascimento</span>
+                    <input className='input' type="text" placeholder='  dd/mm/aaaa' />
                 </div>
                 <div>
-                    <span>Disponível para trabalho presencial</span>
-                    <input type="text" placeholder='Sim' />
+                    <span className='message2'>Disponível para trabalho presencial</span>
+                    <input className='input2' type="text" placeholder='  Sim' />
                 </div>
                 <div>
-                    <span>Horas semanais de disponibilidade</span>
-                    <input type="text" placeholder='Exemplo: 30h' />
+                    <span className='message3'>Horas semanais de disponibilidade</span>
+                    <input className='input3' type="text" placeholder='  Exemplo: 30h' />
                 </div>
                 <div>
-                    <span>Descreva suas experiências anteriores</span>
-                    <input type="text" placeholder='Escreva em detalhes' />
+                    <span className='message4'>Descreva suas experiências anteriores</span>
+                    <input className='input4' type="text" placeholder='  Escreva em detalhes' />
                 </div>
                 <div>
-                    <span>Informações adicionais (opcional)</span>
-                    <input type="text" placeholder='Escreva em detalhes' />
+                    <span className='message5'>Informações adicionais</span>
+                    <input className='input5' type="text" placeholder='  Escreva em detalhes' />
                 </div>
 
-                <button>Enviar</button>
+                <button className='botao'>Enviar</button>
             </div>
         </div>
     )

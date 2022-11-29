@@ -1,0 +1,175 @@
+.texto{
+/* Quero doar um bem material */
+
+
+position: absolute;
+width: 553px;
+height: 20px;
+left: 394px;
+top: 168px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 20px;
+/* identical to box height, or 62% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #2D2D2D;
+
+}
+
+.subtexto{
+    position: absolute;
+width: 448px;
+height: 47px;
+left: 128px;
+top: 324px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 20px;
+/* or 83% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #000000;
+}
+
+.msg{
+    position: absolute;
+width: 389px;
+height: 45px;
+left: 220px;
+top: 434px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+
+}
+
+.inpt{
+    position: absolute;
+width: 938px;
+height: 96.99px;
+left: 220px;
+top: 493px;
+border-radius: 10px;
+
+}
+
+.msg2{
+    position: absolute;
+width: 154px;
+height: 24px;
+left: 220px;
+top: 665px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.msg3{
+    position: absolute;
+width: 186px;
+height: 24px;
+left: 732px;
+top: 672px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+
+}
+
+.msg4{
+    position: absolute;
+width: 193px;
+height: 24px;
+left: 220px;
+top: 835px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.inpt2{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 220px;
+top: 707px;
+border-radius: 10px;
+
+}
+
+.inpt3{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 732px;
+top: 707px;
+border-radius: 10px;
+
+}
+
+.inpt4{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 220px;
+top: 871px;
+border-radius: 10px;
+
+}
+
+.botao{
+    position: absolute;
+    margin: 250px;
+width: 384px;
+height: 64px;
+left: calc(50% - 900px/2);
+top: calc(50% - 64px/2 + 474px);
+color: white;
+background: #000000;
+border-radius: 18px;
+}

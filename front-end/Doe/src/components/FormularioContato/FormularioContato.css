@@ -1,0 +1,113 @@
+.titulo{
+    
+position: absolute;
+width: 553px;
+height: 20px;
+left: 330px;
+top: 171px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 20px;
+/* identical to box height, or 62% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #2D2D2D;
+}
+
+.subtitulo{
+    position: absolute;
+width: 543px;
+height: 47px;
+left: 12px;
+top: 306px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 20px;
+/* or 83% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #000000;
+
+}
+
+.mensagem{
+    position: absolute;
+width: 85px;
+height: 24px;
+left: 144px;
+top: 416px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.mensagem2{
+    position: absolute;
+width: 112px;
+height: 24px;
+left: 144px;
+top: 615px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.ipt{
+    position: absolute;
+    width: 938px;
+    height: 96.99px;
+    left: 131px;
+    top: 455px;
+    border-radius: 10px;
+}
+
+.ipt2{
+    position: absolute;
+    width: 938px;
+    height: 96.99px;
+    left: 134px;
+    top: 665px;
+    border-radius: 10px;
+
+}
+
+.botaoEnv{
+    position: absolute;
+width: 384px;
+height: 64px;
+left: 411px;
+top: 929px;
+color: white;
+background: #000000;
+border-radius: 18px;
+}

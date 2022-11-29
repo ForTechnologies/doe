@@ -1,0 +1,192 @@
+.titulo{
+    position: absolute;
+width: 553px;
+height: 20px;
+left: 371px;
+top: 285px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 20px;
+/* identical to box height, or 62% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #2D2D2D;
+}
+
+.subtitulo{
+    position: absolute;
+width: 543px;
+height: 47px;
+left: 132px;
+top: 452px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 20px;
+/* or 83% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+
+color: #000000;
+}
+
+.message{
+    position: absolute;
+width: 197px;
+height: 24px;
+left: 174px;
+top: 549px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+
+}
+
+.message2{
+    position: absolute;
+width: 363px;
+height: 24px;
+left: 667px;
+top: 554px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+
+}
+
+.message3{
+    position: absolute;
+width: 339px;
+height: 24px;
+left: 174px;
+top: 692px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.message4{
+    position: absolute;
+width: 369px;
+height: 24px;
+left: 174px;
+top: 859px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+
+
+}
+
+.message5{
+    position: absolute;
+width: 322px;
+height: 24px;
+left: 183px;
+top: 1045px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+.input{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 174px;
+top: 590px;
+}
+
+.input2{
+    position: absolute;
+width: 432px;
+height: 64.64px;
+left: 663px;
+top: 589px;
+}
+
+.input3{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 174px;
+top: 735px;
+}
+
+.input4{
+    position: absolute;
+width: 938px;
+height: 96.99px;
+left: 174px;
+top: 901px;
+}
+
+.input5{
+    position: absolute;
+    width: 938px;
+    height: 96.99px;
+    left: 167px;
+    top: 1084px;
+    border-radius: 10px;
+}
+
+.botao{
+position: absolute;
+width: 384px;
+height: 64px;
+margin: 900px;
+left: calc(50% - 2200px/2 + 0.5px);
+top: calc(50% - 64px/2 + 82.5px);
+
+background: #000000;
+border-radius: 18px;
+}
