@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes , Route } from 'react-router-dom'
 
 
+
 import PerfilOngDoador from './pages/perfilOngDoador/contaDoador';
 
 import PerfilOng from './pages/PerfilOng/contaOngSecaoSobre'
@@ -9,6 +10,7 @@ import PerfilOngCampanha from './pages/PerfilOng/contaOng'
 
 import ContaOngAdicionarCampanha from './pages/PerfilOng/contaOngAdicionarCampanha'
 import ContaOngTelaConfig from './pages/PerfilOng/contaOngEditarDados'
+import { ContaAtualizarCampanha } from './pages/PerfilOng/contaOngAtualizarCampanha';
 
 import CadastroDoador from './pages/CadastroDoador/index';
 import CadastroOng from './pages/CadastroOng/index'
@@ -19,6 +21,7 @@ import ProcurarComunidades from "./pages/Comunidades/comunidades"
 
 
 import PontosDeDoacao from './pages/pontosDeDoacao/PontosDeDoacao';
+
 
 
 
@@ -67,7 +70,7 @@ export default () => {
      </Route>
 
 
-     <Route exact path="/pontos" element={<PontosDeDoacao />}></Route>
+     <Route exact path="/AtualizarCampanha/:id" element={<ContaAtualizarCampanha />}></Route>
 
 
     </Routes>

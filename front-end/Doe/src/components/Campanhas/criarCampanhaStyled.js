@@ -5,20 +5,23 @@ import styled from 'styled-components';
 export const CriarCampanhaStyled = styled.div `
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
-     margin-top: 20px;
-     justify-content: center;
+   
+    justify-content: center;
      display: flex;
+     justify-content: center;
+     align-items: center;
      
      main {
     display: flex;
     justify-content: center;
-
-
+    align-items: center;
     padding: 3rem 0;
 }
 
 .formularioAdicionarCampanha {
-    background-color: #2F3644;
+
+    margin-top: 30px;
+    background-color: #fff;
     padding: 30px 70px;
     border-radius: 15px;
 }
@@ -53,19 +56,16 @@ label {
     margin-bottom: 7px;
     font-size: 1.2rem;
 
-    color: #D2DAF5;
-
     
 }
 
 input, textarea {
     width: 100%;
     border-radius: 10px;
-    border: 0;
+    border: 1px solid #808080;
     outline: 0;
-
+    background-color: #DCDCDC;
     font-size: 1.2rem;
-
     padding-left: 15px;
 }
 
@@ -76,7 +76,6 @@ input {
 textarea {
     height: 190px;
     resize: none;
-
     padding-top: 10px;
 }
 
@@ -90,10 +89,11 @@ button{
     font-family: Heebo;
     font-weight: 800;
     font-size: 1.3rem;
-
-    padding: 5px 50px;
+    justify-content: space-between;
+     margin-right: 10px;
+    padding: 10px 50px;
     color: #fff;
-    background-color: #3DECB1;
+    background-color: #3CB371;
 
     border: 0;
     border-radius: 10px;
@@ -104,6 +104,22 @@ button{
 
 .error-message {
     color: rgb(240, 47, 47);
+}
+
+
+
+.containerAtualizarCampanha{
+    height: 100vh;
+    
+    
+
+}
+
+
+.btn-voltar {
+background: #FFA501;
+;
+
 }
     
     `

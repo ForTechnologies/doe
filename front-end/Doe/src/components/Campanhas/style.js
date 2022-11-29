@@ -18,12 +18,16 @@ margin-bottom: 40px;
         height: 550px;
         width: 440px;
         border-radius: 20px;
-        box-shadow: 0px 0px 1px black;
-       
+        box-shadow: 0px 0px 1px black;    
 
-         
-       
+    }
 
+
+    .cardCampanha, input, textarea {
+        border: 0;
+        outline: 0;
+         -webkit-box-shadow: none;
+          box-shadow: none;
     }
 
     .inputAtualizarCapa {

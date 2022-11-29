@@ -11,14 +11,13 @@ class LoginService {
     login(LoginUsuario) {
         return api.post(`/login`, LoginUsuario)
         .then((res) => { 
-            sessionStorage.setItem("idUsuario", res.data.idDoador);
-            sessionStorage.setItem("nome", res.data.nome);
-            sessionStorage.setItem("email", res.data.cpf);
-            sessionStorage.setItem("sexo", res.data.sexo);
-            sessionStorage.setItem("tipoSanguineo", res.data.tipoSanguineo);
-            sessionStorage.setItem("doadorOrgao", res.data.doadorOrgao);
-            sessionStorage.setItem("dtDoacao", res.data.dtDoacao);
-            sessionStorage.setItem("dtNascimento", res.data.dtNascimento);
+            localStorage.setItem('dados do usuario', JSON.stringify(res.data.LoginUsuario))
+            sessionStorage.setItem("idUsuario", res.data.usuario);
+            sessionStorage.setItem("authenticado", res.data.autenticado);
+            sessionStorage.setItem("autorizacoes", res.data.autorizacoes);
+            sessionStorage.setItem("ong", res.data.ong);
+            sessionStorage.setItem("endereco", res.data.endereco);
+        
             console.log(res)
             this.state.res = res })
         .catch((error) => {

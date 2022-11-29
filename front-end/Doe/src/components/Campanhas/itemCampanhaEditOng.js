@@ -16,41 +16,41 @@ function CampanhaEditOng(props) {
 
 
 
-  const [tituloInput, setTituloInput] = useState(props.titulo);
+  const [tituloInput, setTituloInput] = useState("sss");
   const [descricaoInput, setDescricaoInput] = useState(props.descricao);
-  const [imagemInput, setImagemInput] = useState(props.imagem);
+  const [imagemInput, setImagemInput] = useState(props.urlImagem);
 
-  const [editavel, setEditavel] = useState(false);
-
-
-   
-
-  console.log(tituloInput);
-  console.log(descricaoInput);
-  console.log(imagemInput)
-
-  function editar() {
-    const musicaEditada = {
-      titulo: tituloInput,
-      descricao: descricaoInput,
-      imagem: imagemInput
-    };
+  // const [editavel, setEditavel] = useState(false);
 
 
-    // /musica-box/{id}
-    api
-      .put(`/${props.id}`, musicaEditada)
-      .then((res) => {
-        alert("Musica Atualizada!");
-        setEditavel(false);
-      })
-      .catch((erro) => {
-        alert("Deu erro, se vira!");
-        console.log(erro);
-      });
 
-    console.log(musicaEditada);
-  }
+
+  // console.log(tituloInput);
+  // console.log(descricaoInput);
+  // console.log(imagemInput)
+
+  // function editar() {
+  //   const musicaEditada = {
+  //     titulo: tituloInput,
+  //     descricao: descricaoInput,
+  //     imagem: imagemInput
+  //   };
+
+
+  //   // /musica-box/{id}
+  //   api
+  //     .put(`/${props.id}`, musicaEditada)
+  //     .then((res) => {
+  //       alert("Musica Atualizada!");
+  //       setEditavel(false);
+  //     })
+  //     .catch((erro) => {
+  //       alert("Deu erro, se vira!");
+  //       console.log(erro);
+  //     });
+
+  //   console.log(musicaEditada);
+  // }
 
 
   return (
@@ -71,71 +71,32 @@ function CampanhaEditOng(props) {
 
           <div className='divInformacoesCampanha'>
             <div className='tituloCardCampanha'>
-            <strong
-                className={editavel ? "strong-music-enable" : "strong-music-disabled"}
-                disabled={!editavel}
-               >Titulo da campanha: </strong>
               <input
-                className={editavel ? "input-music-enable" : "input-music-disabled"}
-                disabled={!editavel}
                 type="text"
                 defaultValue={tituloInput}
-                onChange={(e) => setTituloInput(e.target.value)}
               ></input>
             </div>
 
             <div className='descricaoCardCampanha'>
-            <strong
-                className={editavel ? "strong-music-enable" : "strong-music-disabled"}
-                disabled={!editavel}
-               >Descricao da campanha: </strong>
               <textarea
-              maxLength={250}
-                className={editavel ? "input-music-enable" : "input-music-disabled"}
-                disabled={!editavel}
+                maxLength={250}
                 defaultValue={descricaoInput}
-                onChange={(e) => setDescricaoInput(e.target.value)}
 
               />
 
+            </div>
+
 
             
-              {/* <p>Campanha destinado a arrecadação de agasalhos da ong @juntosNoInverno.
-                 Nossa campanha tem como meta agasalhar mais de 100 moradores de rua localizados......
-                 Campanha destinado a arrecadação de agasalhos.  Nossa campanha...</p> */}
-
-            </div>
-
-
-            <div className="inputAtualizarCapa">
-              <strong
-                className={editavel ? "strong-music-enable" : "strong-music-disabled"}
-                disabled={!editavel}
-               >Imagem da capa: </strong>
-              <input
-                className={editavel ? "input-music-enable" : "input-music-disabled"}
-                disabled={!editavel}
-                type="text"
-                defaultValue={imagemInput}
-                onChange={(e) => setImagemInput(e.target.value)}
-
-              >
-
-              </input>
-            </div>
-
 
 
             <div className='divBotaoCardCampanha'>
               <button
-                onClick={() => setEditavel(!editavel)}
-                 
+
                 className='botaoCardCampanha botaoAtualizarCampanha'
-               
-                >Atualizar</button>
-              <button className='botaoCardCampanha botaoExcluirCampanha'
-               onClick={editar}
-              >Excluir</button>
+
+              >Atualizar</button>
+              <button className='botaoCardCampanha botaoExcluirCampanha'>Excluir</button>
 
             </div>
 

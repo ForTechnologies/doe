@@ -23,6 +23,8 @@ body {
 
 }
 
+
+
 .divEspacoHeaderCampanha {
     margin-left: 18%;
      
@@ -39,7 +41,9 @@ body {
     padding-bottom: 3vh;
 }
 
-
+textarea {
+    resize: none;
+}
 
 a {
    text-decoration: none;
