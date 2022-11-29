@@ -146,7 +146,7 @@ export default function Login() {
                   <VisibilityOffOutlinedIcon />
                 )}
               </span>
-              <p className={style.markdown}>Esqueceu sua senha?</p>
+              <p className={style.markdown}>Esqueceu sua senha</p>
               <Button
                 label="Entrar"
                 fontFamily={"PoppinsBold"}
