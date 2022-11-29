@@ -20,7 +20,6 @@ import ProcurarCampanhas from "./pages/Campanhas/Campanhas"
 import ProcurarComunidades from "./pages/Comunidades/comunidades"
 
 
-import PontosDeDoacao from './pages/pontosDeDoacao/PontosDeDoacao';
 
 
 
