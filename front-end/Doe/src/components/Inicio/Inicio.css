@@ -1,96 +1,63 @@
-.inicio {
-    display: flex;
-    justify-content: space-between;
-}
-
-.homeBorder {
-    margin-top: 11rem;
-    border-left: 3px solid #FFA501;
-    margin-left: 9rem;
-}
-
-.home {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-    gap: 2rem;
-}
-
-.inicio .fundo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -10;
-    margin-top: 3rem;
-}
-
-.home .circulo {
-    width: 3rem;
-    z-index: -5;
-}
-
-.home .subs {
-    display: flex;
-    align-items: center;
-}
-
-.home .sub {
-    font-size: 20px;
+.btnCadastrar {
+    padding: 0.6rem 2rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    background: #ffa501;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .btnSaberMais {
+    padding: 0.6rem 2rem;
+    transition: 0.2s;
     color: #fff;
-    font-family: 'Inter', sans-serif;
-    margin-left: -1.5rem;
-}
-
-.home .tituloHomeInicio {
-    font-size: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #ffffff00;
+    font-size: 15px;
+  }
+  .btnCadastrar:hover {
+    background: #ffb62d;
+  }
+  
+  .btnSaberMais:hover {
     color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-.home .informacao {
-    font-size: 20px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    margin-top: -1rem;
-}
-
-.home .buttonsInicio{ 
+    background: #7a7a7aa8;
+  }
+  
+  .buttonsInicio {
     display: flex;
     align-items: center;
     gap: 2rem;
-}
-
-.home .comecar {
+  }
+  
+  .comecar {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 12rem;
     height: 3rem;
-    background: #FFA501;
+    background: #ffa501;
     gap: 1rem;
     font-size: 20px;
     border-radius: 10px;
     transition: 300ms all ease;
     cursor: pointer;
-}
-
-.home .comecar:hover {
-    background: #FF5555;
+  }
+  
+  .comecar:hover {
+    background: #ff5555;
     color: #fff;
-}
-
-
-.home .comeco {
-    font-family: 'Inter', sans-serif;
-}
-
-.home .comecar img {
-    width: 2rem;
-}
-
-.home .saiba {
+  }
+  
+  .comeco {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .saiba {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,17 +69,17 @@
     color: #fff;
     transition: 300ms all ease;
     cursor: pointer;
-}
-
-.home .saiba:hover {
-    background: #FFA501;
-}
-
-.home .mais {
-    font-family: 'Inter', sans-serif;
-}
-
-.home .saiba img {
+  }
+  
+  .saiba:hover {
+    background: #ffa501;
+  }
+  
+  .mais {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .saiba img {
     width: 1rem;
-}
-
+  }
+  
