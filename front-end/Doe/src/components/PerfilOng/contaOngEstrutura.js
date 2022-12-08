@@ -63,10 +63,10 @@ function ContaOngEstrutura() {
       </div>
 
       <div className='abasPerfilOng'>
-      <p><Link to="/PerfilOng">Sobre</Link></p>
-      <p><Link to="/PerfilOngCampanha">Campanhas</Link></p>
-      <p><Link to="/ContaOngAdicionarCampanha">Nova campanha</Link></p>
-      <p><Link to="/EditarDadosOng">Editar dados</Link></p>
+      <a className='linhaNavBar'><Link to="/PerfilOng" >Sobre</Link></a>
+      <a className='linhaNavBar'><Link to="/PerfilOngCampanha">Campanhas</Link></a>
+      <a className='linhaNavBar'><Link to="/ContaOngAdicionarCampanha">Nova campanha</Link></a>
+      <a className='linhaNavBar'><Link to="/EditarDadosOng">Editar dados</Link></a>
 
       </div>
       

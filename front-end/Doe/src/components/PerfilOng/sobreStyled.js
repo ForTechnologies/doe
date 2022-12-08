@@ -50,10 +50,11 @@ export const SecaoSobreStyled = styled.div `
 }
 
 .divCardInfoPerfilOngGrid:nth-child(2) {
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
     grid-row-start: 1;
     grid-row-end: 3;
+
 
 }
 
@@ -62,16 +63,18 @@ export const SecaoSobreStyled = styled.div `
     height: 350px;
     grid-column-start: 1;
     grid-column-end: 2;
+
     
 
 }
 
 
 .divCardInfoPerfilOngGrid:nth-child(4) {
-    width: 400px;
+    width: 350px;
     grid-row-start: 3;
     grid-row-end: 6;
-    height: 550px;
+    height: 450px;
+
 
 }
 
@@ -258,7 +261,6 @@ cursor: pointer;
     .containerCardsInfosPerfilOng {
     height: 100vh auto;
     width: 100%;
-    background-color: red;
     display: grid;
    
     grid-template-columns: repeat(1, 1fr);
@@ -271,7 +273,6 @@ cursor: pointer;
 
 
 .divCardInfoPerfilOngGrid:nth-child(1) {
-    background-color: pink;
     width: 100%;
     height: 600px;
     grid-column-start: 1;
@@ -284,9 +285,7 @@ cursor: pointer;
 }
 
 .divCardInfoPerfilOngGrid:nth-child(2) {
-    background-color: blue;
     width: 100%;
-
     height: 400px;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -297,7 +296,6 @@ cursor: pointer;
 }
 
 .divCardInfoPerfilOngGrid:nth-child(3) {
-    background-color: black;
     width: 100%;
     height: 350px;
     grid-column-start: 1;
@@ -310,7 +308,6 @@ cursor: pointer;
 
 
 .divCardInfoPerfilOngGrid:nth-child(4) {
-    background-color: yellow;
     width: 100%;
   
     height: 550px;
@@ -323,7 +320,6 @@ cursor: pointer;
 }
 
 .divCardInfoPerfilOngGrid:nth-child(5) {
-    background-color: green;
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 1;

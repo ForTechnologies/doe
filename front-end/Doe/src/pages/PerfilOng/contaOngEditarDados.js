@@ -36,16 +36,25 @@ function ContaOngEditarDados() {
     
     const [projetoFormalizadoInput, setProjetoFormalizado] = useState("Nao");
     const [razaoSocialInput, setRazaoSocial] = useState("ASSOCIACAO COMUNITARIA ONG ROBERSOM CLEMENTE MONTE");
+    const [CNPJInput, setCnpjInput] = useState("36.410.601/0001-10");
+    const [dirigenteInput, setDirigente] = useState("Santos");
+    const [enderecoInput, setEndereco] = useState("R. Dr. Carlos de Rezende Enout, 268 - Parque Doroteia - 04475-490 - São Paulo - SP");
+
+
+
 
     //dados da entiedade
     const [editavelDadosDaEntiedade, setEditavelDadosDaEntiedade] = useState(false);
 
 
-    //bancp agencia conta
     //dados de transferencia
-    const [bancoInput, setBanco] = useState("banco teste");
-    const [agenciaInput, setagencia] = useState("agencia");
-    const [contaBancoInput, setContaBanco] = useState("conta");
+    const [bancoInput, setBanco] = useState("Inter");
+    const [agenciaInput, setagencia] = useState("001");
+    const [beneficiarioInput, setBeneficiarioInput] = useState("ASSOCIACAO COMUNITARIA ONG ROBERSOM CLEMENTE MONTE");
+    const [contaCorrentInput, setContaCorrente] = useState("1960273-2");
+    const [chavePixInput, setChavePix] = useState("36410601000110");
+
+
 
     const [editavelTransferenciaBancaria, setEditavelTransferenciaBancaria] = useState(false);
 
@@ -80,7 +89,7 @@ function ContaOngEditarDados() {
 
                         <div className='TituloPrincipalConfig'>
 
-                            <div className='titulo'>Alterar configuraçoes </div>
+                            <div className='tituloConfigPrinc'>Alterar configuraçoes </div>
                             <div className='iconeFecharModal'>
                                 <Link to="/PerfilOng"><img src={IconeFecharModal}></img></Link>
 
@@ -188,12 +197,36 @@ function ContaOngEditarDados() {
                                         
                                     </p>
                                     <p>CNPJ: 36.410.601/0001-10
+                                
+                                    <input
+                                        
+                                        className={editavel ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavel}
+                                        defaultValue={CNPJInput}
+                                        onChange={(e) => setCnpjInput(e.target.value)}></input>
+                                    </p>
+                                    
+                                    <p>Dirigente: Santos
+                                    <input
+                                        
+                                        className={editavel ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavel}
+                                        defaultValue={dirigenteInput}
+                                        onChange={(e) => setDirigente(e.target.value)}></input>
+
+                                    </p>
+                                    <p>Endereço:
+
+                                    <input
+                                        
+                                        className={editavel ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavel}
+                                        defaultValue={enderecoInput}
+                                        onChange={(e) => setEndereco(e.target.value)}></input>
+
                                     </p>
                                     <p>Situação Cadastral: Ativa desde 04/02/2020
                                     </p>
-                                    <p>Dirigente: Santos
-                                    </p>
-                                    <p>Endereço: R. Dr. Carlos de Rezende Enout, 268 - Parque Doroteia - 04475-490 - São Paulo - SP</p>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +236,7 @@ function ContaOngEditarDados() {
                             <div className='tituloConfig'>
                                 <div>Transferencia bancaria</div>
                                 <div className='editarConfig'
-                                 onClick={() => setEditavelTransferenciaBancaria(!editavelDadosDaEntiedade)}
+                                 onClick={() => setEditavelTransferenciaBancaria(!editavelTransferenciaBancaria)}
                                 >Editar</div>
                             </div>
                             <div className='conteudoConfig'>
@@ -220,19 +253,53 @@ function ContaOngEditarDados() {
                                         onChange={(e) => setBanco(e.target.value)} ></input>  
 
                                     </p>
-                                    <p>Agência: 0001
+                                    <p>Agência: 
+                                    <input
+                                        className={editavelTransferenciaBancaria ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavelTransferenciaBancaria}
+                                        type="text"
+                                        defaultValue={agenciaInput}
+                                        onChange={(e) => setagencia(e.target.value)} ></input>  
+
 
                                     </p>
-                                    <p>Conta Corrente: 1960273-2
+                                    <p>Conta Corrente: 
+                                    <input
+                                        className={editavelTransferenciaBancaria ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavelTransferenciaBancaria}
+                                        type="text"
+                                        defaultValue={contaCorrentInput}
+                                        onChange={(e) => setContaCorrente(e.target.value)} ></input>  
+
 
                                     </p>
                                     <p>CNPJ: 36.410.601/0001-10
+                                    <input
+                                        
+                                        className={editavel ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavel}
+                                        defaultValue={CNPJInput}
+                                        onChange={(e) => setCnpjInput(e.target.value)}></input>
 
                                     </p>
-                                    <p>Chave Pix: 36410601000110
+                                    <p>Chave Pix: 
+
+                                    <input
+                                        className={editavelTransferenciaBancaria ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavelTransferenciaBancaria}
+                                        type="text"
+                                        defaultValue={chavePixInput}
+                                        onChange={(e) => setChavePix(e.target.value)} ></input>  
 
                                     </p>
-                                    <p>Beneficiário: ASSOCIACAO COMUNITARIA ONG ROBERSOM CLEMENTE MONTE
+                                    <p>Beneficiário:
+                                    <input
+                                        className={editavelTransferenciaBancaria ? "input-music-enable" : "input-music-disabled"}
+                                        disabled={!editavelTransferenciaBancaria}
+                                        type="text"
+                                        defaultValue={beneficiarioInput}
+                                        onChange={(e) => setBeneficiarioInput(e.target.value)} ></input>  
+
 
                                     </p>
 

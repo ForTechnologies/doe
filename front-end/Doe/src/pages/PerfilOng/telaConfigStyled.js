@@ -26,13 +26,13 @@ export const ContaConfigStyled = styled.div `
 
 .divCardContainer {
     margin-top: 190px;
-    
+    border-radius: 30px;
     background-color: aliceblue;
     z-index: 300;
     height: auto;
     width: 50%;
     opacity: 1.0; //1.0 = totalmente opaco, 0.0 = totalmente transparente
-   display: flex;
+    display: flex;
    flex-direction: column;
    
 
@@ -40,20 +40,20 @@ export const ContaConfigStyled = styled.div `
    
 }
 
-.TituloPrincipalConfig  {
-    height: 5%;
+.TituloPrincipalConfig{
+    height: 40%;
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
+    justify-content: center;
+    padding: 40px;
+   
+}
+
+.tituloConfigPrinc {
     font-weight: 700;
     font-size: 25px;
     text-transform: uppercase;
    
-}
 
-.TituloPrincipalConfig  .titulo {
-
-    transform: translateX(-200px);
 }
 
 
@@ -61,6 +61,10 @@ export const ContaConfigStyled = styled.div `
     height: 50px;
     width: 50px;
     cursor: pointer;
+    background-color: azure;
+    position: relative;
+    left: 100px;
+
 }
 
 
@@ -99,16 +103,25 @@ export const ContaConfigStyled = styled.div `
 .centroPadrao {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 240px;
     
 }
 
 .centroPadrao img {
-    height: 200px;
+    height: 150px;
 }
 
 .biografiaTexto {
     padding: 20px 10px;
     width: 80%;
+    font-size: 20px;
+}
+
+.biografiaTexto textArea {
+    padding: 20px 10px;
+    width: 600px;
+    height: 150px;
     font-size: 20px;
 }
 
