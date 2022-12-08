@@ -1,41 +1,104 @@
-import React from 'react'
-import './Inicio.css'
-import Circulo from '../../assets/img-home/circulo.png'
-import Home from '../../assets/img-home/home.png'
-import Seta from '../../assets/img-home/seta.svg'
-import SetaBranca from '../../assets/img-home/seta-branca.png'
-import SetaBranca2 from '../../assets/img-home/seta-branca2.png'
+import React, { useState } from "react";
+import "./Inicio.css";
+import Home from "../../assets/img-home/home.png";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 
 export const Inicio = () => {
-    return (
-        <div className='inicioAll' id='home'>
-            <div className="inicio">
-                <div className="homeBorder">
-                    <div className="home">
-                        <div className="subs">
-                            <img src={Circulo} alt="" className='circulo' />
-                            <span className="sub">Voce pode mudar a vida de alguem</span>
-                        </div>
-                        <h1 className="titulo">Encontre pontos de <br />
-                            doações, ajude pessoas</h1>
-                        <span className="informacao">No Doe! voce encontra as ongs mais proximas do seu<br />
-                            endereço. Venha fazer parte dessa grande rede de apoio <br />
-                            e ajude pessoas em situação de rua
-                        </span>
-                        <div className="buttonsInicio">
-                            <div className="comecar">
-                                <span className="comeco">Começar</span>
-                                <img src={Seta} alt="" className='seta'/>
-                            </div>
-                            <div className="saiba">
-                                <img src={SetaBranca} alt="" /> 
-                                <span className="mais">Saiba Mais</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src={Home} alt="" className='fundo' />
-            </div>
+  const [click, setClick] = useState(false);
+  const closeMenu = () => setClick(false);
+  const navigate = useNavigate();
+
+  return (
+    <div
+      style={{
+        paddingTop: "4rem",
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        backgroundColor: "#EFEFEF",
+        backgroundImage: `url(${Home})`,
+        backgroundSize: "cover",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          gap: "2rem",
+          flexDirection: "column",
+          width: "900px",
+          height: "350px",
+          borderLeft: "orange solid 2px",
+          paddingLeft: "1.2rem",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            gap: "2rem",
+            flexDirection: "column",
+          }}
+        >
+          <b
+            style={{
+              fontSize: "20px",
+              color: "#fff",
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            Voce pode mudar a vida de alguem
+          </b>
+
+          <div>
+            <h1
+              style={{
+                fontSize: "40px",
+                color: "#fff",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              Encontre pontos de <br />
+              doações, ajude pessoas
+            </h1>
+          </div>
+
+          <div
+            style={{
+              fontSize: "18px",
+              color: "#fff",
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            No Doe! voce encontra as ongs mais proximas do seu
+            <br />
+            endereço. Venha fazer parte dessa grande rede de apoio <br />e ajude
+            pessoas em situação de rua
+          </div>
+
+          <div style={{ display: "flex", gap: "2rem" }}>
+            <button
+              className="btnCadastrar"
+              onClick={() => navigate("/CadastroDoador")}
+            >
+              Cadastrar-se ➡{" "}
+            </button>
+
+            <Link
+              to="sobre"
+              spy={true}
+              smooth={true}
+              offset={-90}
+              duration={600}
+              onClick={closeMenu}
+            >
+              <button className="btnSaberMais"> ▶ Saiba Mais</button>
+            </Link>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};

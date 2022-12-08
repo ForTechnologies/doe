@@ -30,6 +30,7 @@
 .headerHome .menuHome {
     list-style: none;
     display: flex;
+    width: 50rem;
     gap: 1rem;
     align-items: center;
     justify-content: space-around;

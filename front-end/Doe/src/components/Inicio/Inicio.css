@@ -1,118 +1,84 @@
-.inicio {
-    display: flex;
-    justify-content: space-between;
+.btnCadastrar {
+  padding: 0.6rem 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background: #ffa501;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.homeBorder {
-    margin-top: 11rem;
-    border-left: 3px solid #FFA501;
-    margin-left: 9rem;
+.btnSaberMais {
+  padding: 0.6rem 2rem;
+  transition: 0.2s;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #ffffff00;
+  font-size: 15px;
+}
+.btnCadastrar:hover {
+  background: #ffb62d;
 }
 
-.home {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-    gap: 2rem;
+.btnSaberMais:hover {
+  color: #fff;
+  background: #7a7a7aa8;
 }
 
-.inicio .fundo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -10;
-    margin-top: 3rem;
+.buttonsInicio {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.home .circulo {
-    width: 3rem;
-    z-index: -5;
+.comecar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 3rem;
+  background: #ffa501;
+  gap: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  transition: 300ms all ease;
+  cursor: pointer;
 }
 
-.home .subs {
-    display: flex;
-    align-items: center;
+.comecar:hover {
+  background: #ff5555;
+  color: #fff;
 }
 
-.home .sub {
-    font-size: 20px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    margin-left: -1.5rem;
+.comeco {
+  font-family: "Inter", sans-serif;
 }
 
-.home .titulo {
-    font-size: 60px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
+.saiba {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 3rem;
+  gap: 1rem;
+  font-size: 20px;
+  border-radius: 10px;
+  color: #fff;
+  transition: 300ms all ease;
+  cursor: pointer;
 }
 
-.home .informacao {
-    font-size: 20px;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    margin-top: -1rem;
+.saiba:hover {
+  background: #ffa501;
 }
 
-.home .buttonsInicio{ 
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.mais {
+  font-family: "Inter", sans-serif;
 }
 
-.home .comecar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12rem;
-    height: 3rem;
-    background: #FFA501;
-    gap: 1rem;
-    font-size: 20px;
-    border-radius: 10px;
-    transition: 300ms all ease;
-    cursor: pointer;
+.saiba img {
+  width: 1rem;
 }
-
-.home .comecar:hover {
-    background: #FF5555;
-    color: #fff;
-}
-
-
-.home .comeco {
-    font-family: 'Inter', sans-serif;
-}
-
-.home .comecar img {
-    width: 2rem;
-}
-
-.home .saiba {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12rem;
-    height: 3rem;
-    gap: 1rem;
-    font-size: 20px;
-    border-radius: 10px;
-    color: #fff;
-    transition: 300ms all ease;
-    cursor: pointer;
-}
-
-.home .saiba:hover {
-    background: #FFA501;
-}
-
-.home .mais {
-    font-family: 'Inter', sans-serif;
-}
-
-.home .saiba img {
-    width: 1rem;
-}
-
