@@ -88,7 +88,7 @@ export const Inicio = () => {
 
             <Link
               to="sobre"
-              spy={true}
+              spy={true} 
               smooth={true}
               offset={-90}
               duration={600}

@@ -57,7 +57,7 @@ export const HeaderHome = () => {
                 className="list"
                 style={{
                   width: "160px",
-                  marginLeft: "1.7rem"
+                  marginLeft: "1.7rem",
                 }}
               >
                 <Link

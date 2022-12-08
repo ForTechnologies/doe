@@ -88,9 +88,12 @@ export default function Login() {
   });
 
   return (
-    <section className={style.container} style={{
-      overflow:"hidden"
-    }}>
+    <section
+      className={style.container}
+      style={{
+        overflow: "hidden",
+      }}
+    >
       <Header textColor="red" />
       <div className={style.content}>
         <Toast ref={toast} position="bottom-center" />
@@ -111,7 +114,8 @@ export default function Login() {
               backgroundColor={"#FF2939"}
               textColor={"#FFF"}
               marginRight={-68}
-              width="70%"l
+              width="70%"
+              l
             />
           </Link>
         </div>
