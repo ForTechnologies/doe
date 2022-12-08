@@ -4,29 +4,19 @@ import './styles/login.css'
 import './global.css'
 import './components/Forms/styleForms.js'
 import './components/botoes/style'
-<<<<<<< HEAD
 import { Header } from './components/Headeer/header';
-import { Routes , Route } from 'react-router-dom'
+// import { Routes , Route } from 'react-router-dom'
 
 
 
 // import Login from "./pages/Login/index.js";
 // import CadastroOng from "./pages/CadastroOng/index.js";
 // import CadastroDoador from "./pages/CadastroDoador/index.js";
-=======
-
-
-import Login from "./pages/Login/index.js";
-import CadastroOng from "./pages/CadastroOng/index.js";
-import CadastroDoador from "./pages/CadastroDoador/index.js";
-import { Home } from './pages/Home';
->>>>>>> 91eee8298d2e2a8a42c4e0c3d97818efa197c31e
 import { Geolocalizacao } from './pages/Geolocalizacao';
 import { Doacao } from './pages/Doacao'
 import { Voluntario } from './pages/Voluntario'
 import { Contato } from './pages/Contato'
 import { InformacoesDoacao } from './pages/InformacoesDoacao'
-<<<<<<< HEAD
 
 
 
@@ -64,11 +54,6 @@ function App() {
   return (
 
 
-=======
-function App() {
-  return (
-  
->>>>>>> 91eee8298d2e2a8a42c4e0c3d97818efa197c31e
       <BrowserRouter>
       <Routes> 
           {/* <Route element = { <Login /> }  path="/login" /> */}
@@ -111,10 +96,6 @@ function App() {
           </Routes>
          
       </BrowserRouter> 
-<<<<<<< HEAD
-
-=======
->>>>>>> 91eee8298d2e2a8a42c4e0c3d97818efa197c31e
   );
 }
 
