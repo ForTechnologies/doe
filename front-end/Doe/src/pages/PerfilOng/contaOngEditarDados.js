@@ -80,7 +80,7 @@ function ContaOngEditarDados() {
 
                         <div className='TituloPrincipalConfig'>
 
-                            <div className='titulo'>Alterar configuraçoes </div>
+                            <div className='tituloConfigPrinc'>Alterar configuraçoes </div>
                             <div className='iconeFecharModal'>
                                 <Link to="/PerfilOng"><img src={IconeFecharModal}></img></Link>
 

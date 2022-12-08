@@ -5,16 +5,18 @@ import styled from 'styled-components';
 export const CardBuscarComunidadeStyle = styled.div `
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
-    margin-top: 20px;
-     justify-content: center;
-     display: flex;
+      
+    
+     
      
     .cardBuscarComunidade {
-      
-        height: 350px;
-        width: 50%;
+        margin-top: 30px;
+        height: 360px;
+        width: 60%;
         border-radius: 20px;
         box-shadow: 0px 0px 1px black;
+        margin-left: 12%;
+
       
        
 
@@ -47,7 +49,7 @@ export const CardBuscarComunidadeStyle = styled.div `
          height: 100px;
          background-color: aliceblue;
          border-radius: 50px;
-         transform: translate(20%, -50%);
+         transform: translate(20%, -70%);
 
 
     }
@@ -64,9 +66,10 @@ export const CardBuscarComunidadeStyle = styled.div `
      
 
 .tituloCardComunidade {
-    
+   background-color: #FFA501;
     width: 100%;
     height: 15%;
+    display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -107,12 +110,11 @@ export const CardBuscarComunidadeStyle = styled.div `
 
 .fotosParticipantesComunidade {
     width: 200px;
-    height: 100%;
-    background-color: black;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  
+    cursor: pointer;
    
 }
 

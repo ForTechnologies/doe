@@ -21,9 +21,9 @@ export const HeaderHome = () => {
                         <ul className='menuHome'>
                             <a className='list'><Link to="home" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>Home</Link></a>
                             <a className='list'><Link to="sobre" spy={true} smooth={true} offset={-90} duration={500} onClick={closeMenu}>Sobre</Link></a>
-                            <a className='list'><Link to="problema" spy={true} smooth={true} offset={-90} duration={500} onClick={closeMenu}>Problema</Link></a>
-                            <a className='list'><Link to="objetivo" spy={true} smooth={true} offset={-110} duration={500} onClick={closeMenu}>Nosso objetivo</Link></a>
-                            <a className='list'><Link to="doar" spy={true} smooth={true} offset={-110} duration={500} onClick={closeMenu}>Como doar</Link></a>
+                            <a className='list espacoMaiorProblem'><Link to="problema" spy={true} smooth={true} offset={-90} duration={500} onClick={closeMenu}>Problema</Link></a>
+                            <a className='list espacoMaiorObjetivo'><Link to="objetivo" spy={true} smooth={true} offset={-110} duration={500} onClick={closeMenu}>Nosso objetivo</Link></a>
+                            <a className='list espacoMaior'><Link to="doar" spy={true} smooth={true} offset={-110} duration={500} onClick={closeMenu}>Como doar</Link></a>
                         </ul>
                     </div>
                     <div className="buttonsHome">
