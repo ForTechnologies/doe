@@ -10,11 +10,11 @@ export const HeaderStyle = styled.div`
   
      
     .botoesHeader {
-      margin
+      
     }
 
     .palavrasHeader .marcado{
-      border: 3px solid #FFA501;
+      border: 20px solid #FFA501;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       width: 86px;
       height: 0px;
@@ -36,6 +36,7 @@ export const HeaderStyle = styled.div`
       height: 32px;
       left: 347px;
       top: 30px;
+      background-color: #FFA501;
     }
 
 
@@ -53,7 +54,7 @@ export const HeaderStyle = styled.div`
      top: 0px;
   }
 
-     }
+     
 
 
     

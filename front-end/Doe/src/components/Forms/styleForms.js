@@ -9,7 +9,7 @@ export const FormControl = styled.div `
   width: 100%;
   margin-bottom: 60em;
   display: flex;
-  
+
 
  .textEntre {
     margin-top: 180px;
@@ -229,6 +229,8 @@ select:-webkit-autofill:focus {
   width: 100%;
   margin-bottom: 15px;
   height: 40px;
+  background-color: blue;
+
  
   
 }
@@ -240,7 +242,7 @@ select:-webkit-autofill:focus {
 
 .input5, .input2, .input6Ong, .input8Ong, input{
   margin-right: 20px;
-}
+} 
 
  
 .btnCadastroOng {

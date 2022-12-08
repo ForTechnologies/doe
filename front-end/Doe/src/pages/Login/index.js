@@ -11,19 +11,8 @@ import LoginService from "../../services/LoginService";
 import constantes from "../../utils/constantes";
 
 
-// import olhoAberto from '../../assets/olhoAberto.png';
-// import olhoFechado from '../../assets/olhoFechado.png';
-
-
-//import { Link } from 'react-router-dom';
-// <Link to="/sobre">Sobre</Link>
-
 
 const Login = () => {
-
-  // const [input, setInput] = useState('');
-  // const [hidePass, setHidePass] = useState(true)
-
 
 
 

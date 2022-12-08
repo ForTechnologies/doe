@@ -16,7 +16,7 @@ export const Inicio = () => {
                             <img src={Circulo} alt="" className='circulo' />
                             <span className="sub">Voce pode mudar a vida de alguem</span>
                         </div>
-                        <h1 className="titulo">Encontre pontos de <br />
+                        <h1 className="tituloHomeInicio">Encontre pontos de <br />
                             doações, ajude pessoas</h1>
                         <span className="informacao">No Doe! voce encontra as ongs mais proximas do seu<br />
                             endereço. Venha fazer parte dessa grande rede de apoio <br />

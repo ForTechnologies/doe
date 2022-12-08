@@ -27,7 +27,7 @@ function Campanhas() {
 
 
   <div className="containerPaginaCampanha divEspacoHeaderCampanha">
-    <div className='cardTelasCampanha '>
+    <div className='cardTelasCampanha'>
 <div className='divCapaCampanha'>
   <img src={Gato}></img>
 </div>

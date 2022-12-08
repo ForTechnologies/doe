@@ -54,15 +54,6 @@ export const CardBuscarComunidade = () => {
 </CardBuscarComunidadeStyle>
 
 
-
-testeeee
-
-
-
-
-
-
-
 </>
 
 

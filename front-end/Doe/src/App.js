@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import './styles/login.css'
 import './global.css'
+import './components/CardsGeo/CardsGeo.css'
 import './components/Forms/styleForms.js'
 import './components/botoes/style'
 import { Header } from './components/Headeer/header';
@@ -49,10 +50,10 @@ import ProcurarComunidades from "./pages/Comunidades/comunidades"
 // import PerfilOng from './pages/perfilOngDoador/contaDoador';
 
 
-
 function App() {
-  return (
 
+
+  return ( 
 
       <BrowserRouter>
       <Routes> 

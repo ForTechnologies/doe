@@ -30,10 +30,11 @@
 .headerHome .menuHome {
     list-style: none;
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    /* gap: 1rem; */
+    /* align-items: center; */
     justify-content: space-around;
     font-size: 18px;
+   
 }
 
 .headerHome .menuHome a.active {
@@ -44,6 +45,19 @@
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     cursor: pointer;
+   
+}
+
+.espacoMaiorProblem {
+    width: 100px;
+}
+
+.espacoMaiorObjetivo {
+    width: 160px;
+}
+
+.espacoMaior {
+    width: 130px;
 }
 
 .buttonsHome {
@@ -56,6 +70,7 @@
 .buttonsHome .entrar {
     background: transparent;
     border: 2px solid #FF5555;
+    color: black;
     width: 9rem;
     height: 2rem;
     font-size: 18px;

@@ -21,7 +21,7 @@ export const contaOngEstruturaStyled = styled.div `
      
     .cardBuscarComunidade {
          margin: 40px 90px;
-        height: 550px;
+         height: 500px;
         width: 70%;
         border-radius: 20px;
         box-shadow: 0px 0px 1px black;
@@ -86,7 +86,7 @@ export const contaOngEstruturaStyled = styled.div `
 
 .divDescricaoCardComunidade  {
     width: 100%;
-    height: 45%;
+    height: 40%;
     padding-left: 150px !important;
     padding: 20px;
     font-size: 18px;
@@ -131,7 +131,6 @@ export const contaOngEstruturaStyled = styled.div `
     display: flex;  
     align-items: center;
     padding-right: 20px;
-
 
 
 }
@@ -190,15 +189,14 @@ export const contaOngEstruturaStyled = styled.div `
     display: flex;  
     align-items: center;
     padding-left: 20px;
-    border-radius: 0px 0px 20px 20px;
+    /* border-radius: 0px 0px 20px 20px; */
     cursor: pointer;
+    /* background-color: #FFA501; */
 
 
 }
 
-.abasPerfilOng p {
-
-
+.abasPerfilOng a {
 height: 100%;
 justify-content: flex-start;
 display: flex;  
@@ -206,9 +204,13 @@ align-items: flex-end;
 font-weight: 200;
 text-transform: uppercase;
 font-size: 18px;
-padding: 20px 20px 10px 0;
-border-radius: 0px 0px 20px 20px;
+padding: 20px 15px 0px 0;
 
+}
+
+.linhaNavBar a{
+    height: auto;
+    border-bottom: 2px solid #FFA501;
 
 }
 
@@ -223,6 +225,7 @@ border-radius: 0px 0px 20px 20px;
     display: grid;
     justify-content: center;
     align-items: center;
+    background-color: blue;
 
 
    
