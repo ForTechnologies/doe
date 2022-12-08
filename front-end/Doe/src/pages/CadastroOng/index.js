@@ -394,6 +394,8 @@ const CadastroOng = () => {
               }}
             >
               <BtnPadrao>REGISTRAR CONTA</BtnPadrao>
+              {exibeAlerta ? <Alerta /> : <></>}
+              {exibeAlertaVermelho ? <AlertaVermelho /> : <></>}
             </div>
           </div>
           {/* <div className='gridOng input1'>
@@ -438,8 +440,7 @@ const CadastroOng = () => {
                     <div className='btnCadastroOng'>
                      
                     </div>
-                    {exibeAlerta ? <Alerta /> : <></>}
-                        {exibeAlertaVermelho ? <AlertaVermelho /> : <></>} */}
+                     */}
         </FormGrid>
       </ContainerPadraoForm>
     </div>

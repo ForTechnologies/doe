@@ -305,6 +305,8 @@ const CadastroDoador = () => {
                   <span>Cadastre-se aqui</span>
                 </Link>
               </p>
+              {exibeAlerta ? <Alerta /> : <></>}
+              {exibeAlertaVermelho ? <AlertaVermelho /> : <></>}
             </div>
           </div>
 
@@ -337,8 +339,7 @@ const CadastroDoador = () => {
           <div className="btnCadastroOng">
            
           </div>
-          {exibeAlerta ? <Alerta /> : <></>}
-          {exibeAlertaVermelho ? <AlertaVermelho /> : <></>} */}
+           */}
         </FormGrid>
       </ContainerPadraoForm>
     </div>
