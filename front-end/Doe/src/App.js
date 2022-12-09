@@ -23,6 +23,13 @@ import { Doacao } from "./pages/Doacao";
 import { Voluntario } from "./pages/Voluntario";
 import { Contato } from "./pages/Contato";
 import { InformacoesDoacao } from "./pages/InformacoesDoacao";
+
+
+import FormularioDoacao from './components/FormularioDoacao/FormularioDoacao.jsx'
+
+
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -80,6 +87,14 @@ function App() {
           path="/atualizarCampanha/:id"
           element={<ContaAtualizarCampanha />}
         ></Route>
+
+
+          <Route
+          exact
+          path="/formularioDoacao"
+          element={<FormularioDoacao />}
+        ></Route>
+
       </Routes>
     </BrowserRouter>
   );

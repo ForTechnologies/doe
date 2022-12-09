@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import '../FormularioDoacao/FormularioDoacao.css'
 
 export const FormularioDoacao = () => {
+
+    
     return (
         <div>
             <h1 className='texto'>QUERO DOAR UM BEM MATERIAL</h1>
@@ -31,3 +33,6 @@ export const FormularioDoacao = () => {
         </div>
     )
 }
+
+
+export default FormularioDoacao;

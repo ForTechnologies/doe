@@ -16,7 +16,7 @@ function CampanhaEditOng(props) {
 
 
 
-  const [tituloInput, setTituloInput] = useState("sss");
+  const [tituloInput, setTituloInput] = useState("Teste");
   const [descricaoInput, setDescricaoInput] = useState(props.descricao);
   const [imagemInput, setImagemInput] = useState(props.urlImagem);
 
@@ -63,9 +63,8 @@ function CampanhaEditOng(props) {
 
 
         <div className='cardCampanha divEspacoCardCampanha'>
-
           <div className='divCapaCampanha'>
-            <img src={imagemInput}></img>
+            <img src={Gato}></img>
           </div>
 
 
@@ -73,34 +72,21 @@ function CampanhaEditOng(props) {
             <div className='tituloCardCampanha'>
               <input
                 type="text"
-                defaultValue={tituloInput}
+                defaultValue= "teste"
               ></input>
             </div>
 
             <div className='descricaoCardCampanha'>
               <textarea
                 maxLength={250}
-                defaultValue={descricaoInput}
-
-              />
-
+                defaultValue={descricaoInput} />
             </div>
-
-
-            
-
-
             <div className='divBotaoCardCampanha'>
               <button
-
                 className='botaoCardCampanha botaoAtualizarCampanha'
-
               >Atualizar</button>
               <button className='botaoCardCampanha botaoExcluirCampanha'>Excluir</button>
-
             </div>
-
-
           </div>
         </div>
 

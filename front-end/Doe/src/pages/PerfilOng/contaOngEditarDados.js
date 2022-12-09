@@ -11,6 +11,12 @@ import ContaConfigStyled from './telaConfigStyled';
 
 import IconeFecharModal from '../../assets/fecharModal.png'
 
+import PerfilOng from '../../assets/capaOng.webp'
+
+import FotoCapaOng from '../../assets/fotoCapaOng.webp'
+
+
+
 
 // import ModalEdtEndereco from '../../components/pontos/ModalEdtEndereco'
 
@@ -23,7 +29,7 @@ function ContaOngEditarDados() {
 
     // const [isModalEnderecoVisible, setModalEnderecoVisible] = React.useState(false);
 
-    const [descricaoInput, setDescricaoInput] = useState("Campanha destinado a arrecadaçãokkskkskksksksksk de agasalhos allalallalallaallala");
+    const [descricaoInput, setDescricaoInput] = useState("Comunidade destinada a ajudar pessoas em situacao de rua, somos os anjos da noite e passamos a madrugada determinados a confortar e alimentar moradores em vunerabilidade em sao paulo capital. Trazendo esperanca, alimento, agasalhos, itens de limpeza e tudo o que alcancamos para tornar o dia das pessoas em maior vulnerabilidade melhor! Estamos atuando desde 2006 e com sua ajuda, conseguimos ir alem e ajudar mais vidas!");
     
     const [editavel, setEditavel] = useState(false);
     
@@ -110,7 +116,7 @@ function ContaOngEditarDados() {
                             <div className='conteudoConfig'>
 
                                 <div className='centroPadrao'>
-                                    <img src={IconeFecharModal}></img>
+                                    <img src={PerfilOng}></img>
                                 </div>
 
 
@@ -128,7 +134,7 @@ function ContaOngEditarDados() {
                             </div>
                             <div className='conteudoConfig'>
                                 <div className='centroPadrao'>
-                                    <img src={IconeFecharModal}></img>
+                                    <img src={FotoCapaOng}></img>
                                 </div>
 
                             </div>

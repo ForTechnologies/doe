@@ -18,7 +18,7 @@ export const ContaConfigStyled = styled.div `
     z-index: 200;
     transform: translateY(-39%);
     margin-left: 0px;
-    margin-top: 90px;
+    margin-top: 150px;
     /* opacity: 0.8; */
    
 
@@ -33,7 +33,7 @@ export const ContaConfigStyled = styled.div `
     width: 50%;
     opacity: 1.0; //1.0 = totalmente opaco, 0.0 = totalmente transparente
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
    
 
 
@@ -61,7 +61,6 @@ export const ContaConfigStyled = styled.div `
     height: 50px;
     width: 50px;
     cursor: pointer;
-    background-color: azure;
     position: relative;
     left: 100px;
 

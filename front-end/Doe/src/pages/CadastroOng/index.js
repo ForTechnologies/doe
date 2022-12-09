@@ -52,6 +52,9 @@ const CadastroOng = () => {
   const [alerta, setAlerta] = useState("");
   const [alertaTipo, setAlertaTipo] = useState("");
 
+
+  
+
   // constante e método responáveis pela máscara de formatação do cnpj
   // https://medium.com/reactbrasil/m%C3%A1scara-de-cnpj-com-react-regex-bafb58d2285e
   const [values, setValues] = useState({ cnpj: "" });

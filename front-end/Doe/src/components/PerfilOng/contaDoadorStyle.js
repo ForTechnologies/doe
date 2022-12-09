@@ -6,9 +6,7 @@ export const PerfilOngEstruturaStyled = styled.div `
 
 //box-shadow: 4px 4px 4px 4px ${props => props.corSombra};
      
-     
-
-
+    
      .Divisor {
         height: 60vh auto;
         width: 100%;

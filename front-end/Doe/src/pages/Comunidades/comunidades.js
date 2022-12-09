@@ -6,6 +6,12 @@ import Header from '../../components/Headeer/header';
 import CardProcurarComunidades from "../../components/Comunidade/cardBuscarComunidade"
 
 import Gato from '../../assets/fotoCapaOng.webp'
+import foto4 from "../../assets/mocks/capa4.jpg"
+import foto5 from "../../assets/mocks/capa5.jpg"
+import foto6 from "../../assets/mocks/capa6.png"
+import foto7 from "../../assets/mocks/capa7.jpeg"
+
+
 
 import CardBuscarComunidadeStyle from '../../components/Comunidade/style';
 function Comunidades() {
@@ -31,7 +37,7 @@ function Comunidades() {
               <img src={Gato}></img>
             </div>
             <div className='fotoComunidade'>
-              <img src={Gato}></img>
+              <img src={foto4}></img>
             </div>
             <div className='divInformacoesComunidade'>
               <div className='tituloCardComunidade'>Anjos da noite</div>
@@ -57,10 +63,10 @@ function Comunidades() {
 
           <div className='cardBuscarComunidade'>
             <div className='divCapaComunidade'>
-              <img src={Gato}></img>
+              <img src={foto7}></img>
             </div>
             <div className='fotoComunidade'>
-              <img src={Gato}></img>
+              <img src={foto4}></img>
             </div>
             <div className='divInformacoesComunidade'>
               <div className='tituloCardComunidade'>Agasalhar para cuidar</div>
@@ -84,10 +90,10 @@ function Comunidades() {
 
           <div className='cardBuscarComunidade'>
             <div className='divCapaComunidade'>
-              <img src={Gato}></img>
+              <img src={foto4}></img>
             </div>
             <div className='fotoComunidade'>
-              <img src={Gato}></img>
+              <img src={foto5}></img>
             </div>
             <div className='divInformacoesComunidade'>
               <div className='tituloCardComunidade'>Capacita quem necessita</div>

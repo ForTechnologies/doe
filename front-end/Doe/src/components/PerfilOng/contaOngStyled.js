@@ -210,7 +210,7 @@ padding: 20px 15px 0px 0;
 
 .linhaNavBar a{
     height: auto;
-    border-bottom: 2px solid #FFA501;
+    /* border-bottom: 2px solid #FFA501; */
 
 }
 

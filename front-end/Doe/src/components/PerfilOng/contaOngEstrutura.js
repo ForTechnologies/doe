@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import PerfilOngEstruturaStyled from './contaDoadorStyle';
 import IconeConfiguracao from './../../assets/settings.png';
 
+
 function ContaOngEstrutura() {
   return (
    
@@ -46,11 +47,11 @@ function ContaOngEstrutura() {
      
       <div className='divDescricaoCardComunidade'>
         <div className='textoDescricaoCard'>
-      <p> Nos destinado a arrecadação de agasalhos da ong @juntosNoInverno.  Nossa campanha tem como meta agasalhar mais de 100 moradores de rua localizados no estado de sao paulo...</p>
+      <p> Comunidade destinada a ajudar pessoas em situacao de rua, somos os anjos da noite e passamos a madrugada determinados a confortar e alimentar moradores em vunerabilidade em sao paulo capital. Trazendo esperanca, alimento, agasalhos, itens de limpeza e tudo o que alcancamos para tornar o dia das pessoas em maior vulnerabilidade melhor! Estamos atuando desde 2006 e com sua ajuda, conseguimos ir alem e ajudar mais vidas!</p>
       </div>
       <div className='divIconeConfiguracoes'>
 
-       <Link to="/ContaOngTelaConfig"> <img src={IconeConfiguracao} className="iconeConfig"></img> </Link> 
+       {/* <Link to="/ContaOngTelaConfig"> <img src={IconeConfiguracao} className="iconeConfig"></img> </Link>  */}
       </div>
       </div>
      
