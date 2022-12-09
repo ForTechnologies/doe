@@ -121,6 +121,7 @@ const Login = () => {
               {" "}
               <Link to="/PerfilOng">
                 <BtnPadrao>ENTRAR</BtnPadrao>
+                
               </Link>
               <p>
                 Nao tem uma conta?
